@@ -1,0 +1,113 @@
+.shop .shop-left{min-width:230px;width:230px;}
+.shop .shop-right{width:960px;float:right;}
+.shop .shop-left .add,.shop .shop-left li{background-position:195px -437px;}
+.shop .shop-left .subnav li a{font-size:14px;height:42px; line-height:42px;border-left:4px solid #eee}
+.shop .shop-left .subnav li{height:42px; line-height:42px;}
+.shop .shop-left .subnav li.cur a{border-left:4px solid #306bb5;}
+.tspbox .ptit,.pbtit{background:#f5f5f5 url(/DataShare/img/pcgzs/bt01.png) left top no-repeat; width:100%;height:50px; line-height:50px; text-align:left;text-indent:40px;font-size:14px;color:#fff;color:#306bb5; }
+.tspbox{padding-top:0;width:100%;margin:0;}
+.tspbox .base-info{padding-top:0px;}
+.tspbox .shengfen{margin:0;padding:6px 15px; border-bottom:1px solid #fff; background-color: #f5f5f5;}
+.tspbox .shengfen .span span{height:24px; line-height:24px;background:url(/DataShare/img/pcgzs/bg02.png) left top repeat-x;font-size:14px;padding:0 3px;}
+.tspbox .shengfen select{padding:2px 5px; margin-top: 7px;}
+.tspbox .warp-button{margin-top:30px;padding-left:0; text-align:center;}
+.tspbox .warp-button .shengfen-button,.tspbox .warp-button .button{background:url(/DataShare/img/pcgzs/bg02.png) left top repeat-x;float:none;display:inline-block; zoom:1;*display:inline;margin:0 auto;width:111px;height:26px}
+.shengfen-right{float:left;width:800px;}
+.tspbox .warp-button .shengfen-button{float:none;display:inline-block; zoom:1;*display:inline;margin:0 5px;}
+.tspbox .warp-button .shengfen-button img,.tspbox .warp-button .button img{margin-right:8px;width:12px;height:12px}
+.tspbox .anniu{border:1px solid #bfbfbf; height:20px; line-height: 20px; border-radius:11px;margin-top:7px; width:130px;}
+.tspbox .shop-warp02{margin-top:0;}
+.tspbox .warp02-bottom{width:98%;border-top:1px dashed #306bb5;padding-bottom:20px;}
+.tspbox .tftable{width:100%;margin-left:0; table-layout:fixed;}
+.tspbox .tftable td,.tspbox .tftable th{ text-align:center;}
+.tspbox .tftable td{border-color:#a9a9a9;}
+.tspbox .tftable td.ts01{ background-color:#cbcbcb;color:#000;}
+.tspbox .tftable th.ts02{width:80px;}
+.tspbox #tipoi{padding-bottom:5px; text-align:right;width:98%;font-size:12px;color:#306bb5;}
+.tspbox #tipoi i{display:inline-block;zoom:1;*display:inline;width:12px;height:12px;border:1px solid #306bb5;margin-right:5px; vertical-align:-3px;}
+.tspbox #tipoi i.hs{ background-color:#fff;}
+.tspbox #tipoi i.bs{ background-color:#6ad76a;margin-left:15px;}
+.tspbox #tipoi i.ls{ background-color:#ffff99;margin-left:15px;}
+.tspbox #tipoi i.rs{ background-color:#e53341;margin-left:15px;}
+.newdate{padding-bottom:15px;}
+.newdate .calendarTitle,.newdate .ttyu{box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);padding:0 5px;border: 1px solid rgb(232,239,243);border-radius: 8px;background:url(/DataShare/img/pcgzs/rq03.png) left top repeat-x; background-color:#fff;}
+.newdate #calendar{margin:15px auto 0 auto;width:485px;}
+.newdate .ttyu{height:295px;margin-bottom:15px;}
+.newdate #calendar .calendarTitle table .twotd{font-size:16px;color:#fff; text-shadow:0 -1px 1px #01244e;}
+.newdate  #calendar .calendarTitle table td.caletr span,.newdate  .calendar .ttyu  table td.caletr span,.newdate .calendar .ttyu  table td.classOver span,.newdate  #calendar .calendarTitle table td.classOver span{display:block;background-color:#ececef;color:#333;
+    border-radius:3px;cursor: pointer;height:29px; line-height:29px;border:1px solid #d8d8d8;}
+.newdate  #calendar .calendarTitle table td.caletr,.newdate  #calendar .calendarTitle table td.classOver{padding:3px;height:auto;}
+.newdate  #calendar .calendarTitle table td.qscalendar span,.newdate .calendar .ttyu  table td.qscalendar span{ background-color:#fbfb1a;color:#0d85ba;}
+#calendar table.tstable td{height:52px;}
+#calendar .calendarTitle table .twotd{width:400px;padding-right:62px;}
+#calendar .calendarTitle table tr.xq td{font-weight:bold;font-size:14px;}
+.newdate .ttyu {background:url(/DataShare/img/pcgzs/rq04.png) left top repeat-x;}
+.calendar .ttyu  .tstable .twotd{font-weight:bold;font-size:14px;height:40px; line-height:40px;width:201px;padding-right:42px;text-shadow:0 -1px 1px #01244e;color:#fff;}
+.calendar .ttyu  table tr.xq td{font-weight:bold;}
+.calendar .ttyu  table td{padding:2px;}
+.calendar .ttyu  .tstable{margin-bottom:5px;}
+.sfixed{position:fixed;top:0;}
+.pbtit{position:fixed;left:0;top:0;width:960px;}
+.tsbase-info .base-info-input ul li{width:100%;margin-top:25px;}
+.tsbase-info .btn1,.tsbase-info .btn2,.tsbase-info1 .btn1{float:left;display:inline;margin:0 5px;background: url(/DataShare/img/pcgzs/anbg01.png) left top repeat-x;border-radius:5px;color:#fff;border:none;}
+.tsbase-info .base-info-input{padding-bottom:55px;}
+.tsbase-info .input01{width:201px; background-color:#fff;border:1px solid #dcdcdc; box-shadow:0 0 3px #dcdcdc;}
+.tsbase-info .file01{height:auto;padding:5px 2px;}
+@-moz-document url-prefix(){.tsbase-info .file01{padding:3px 2px;}}
+.tspbox .tsbase-info{border:1px solid #c4dffb;box-shadow: 0 2px 8px #cbd9ea;}
+.blank10{height:10px;clear:both;}
+.blank20{height:20px;clear:both;}
+.pclear{clear:both;}
+.lc-box .line3 li.ts{border:none; background:none;}
+.glc-box .line2 ul li img{width:auto;height:auto;}
+.glc-box .line2{top:20px;}
+.glc-box .line4 li{margin-top:105px;}
+.glc-box .line4 li span{color:#666;}
+.glc-box .line3 li{border-color:#878383;}
+.glc-box .line4 li.cur span{color:#316bb5;}
+.tspbox .tsbase-info1{border:none;}
+.tspbox .tsbase-info1 legend{background:url(/DataShare/img/pcgzs/glc03.png) left top no-repeat;height:50px;}
+.tspbox .tsbase-info1 fieldset{width:915px;margin:0 auto;}
+.tspbox .tsbase-info1 .input01{width:201px; background-color:#fff;border:1px solid #dcdcdc; box-shadow:0 0 3px #dcdcdc;}
+.tspbox .tsbase-info1 .err{border:1px solid #d36161;}
+.tsbase-info1 .btn1{float:none; text-align:center;display:inline-block;zoom:1;*display:inline;}
+.tswarp01 .ul-img .angDown,.tswarp01 .warp02-bottom-right th{background:url(/DataShare/img/pcgzs/anbg01.png) left top repeat-x;}
+.tswarp01 .warp02-bottom-left{min-height:300px;width:90px;}
+.tswarp01 .warp02-bottom-left ul ul li{margin-bottom:0; background-color:#eff3f9;height:28px; line-height:28px;}
+.tswarp01 .warp02-bottom-left ul li{margin-bottom:0;}
+.tswar .warp02-bottom-left ul ul li.on{ background:url(/DataShare/img/pcgzs/bg02.png) left top repeat-x;color:#fff;}
+.tswarp01 .warp02-box{width:850px;box-shadow:0 2px 8px #cbd9ea;background-color:#eff3f9;margin-left:8px;}
+.tswarp01 .warp02-bottom-right{ background-color:#fff;padding-bottom:0;border:none;border:1px solid #c4dffb;border-top:none;}
+.tswarp01 .warp02-bottom-right table td{border:1px solid #c4dffb;padding:8px 15px;}
+.tswarp01 .warp02-bottom-right table .even td{ background-color:#eff3f9;}
+.tspbox .tsbase-info1 .base-info-input ul li div{float:left;}
+.tspbox .tsbase-info1 .base-info-input ul li .tishi{ text-indent:10px;}
+.tspbox .tsbase-info1 .base-info-input ul li{width:50%;}
+.tspbox .tsbase-info1 .base-info-input ul li.ts01{width:100%;}
+.tspbox .tsbase-info1 .base-info-input ul li.ts01 .input01{width:665px;}
+
+.table01 td.yellow{ background-color:#ffff99;}
+.table01 td.green{ background-color:#6ad76a;}
+.table01 td.red{ background-color:#e53341;}
+.upload-box{ text-align:center;}
+.upload-box #fileImage{opacity:1;position:static; vertical-align:middle;padding:3px 2px;}
+.upload-box .input01{display:inline-block;zoom:1;*display:inline;}
+.tsbase-info1 .upload-box .btn1{ vertical-align:middle;}
+@-moz-document url-prefix(){.upload-box #fileImage{padding:0 2px;}}
+.toper{background:#fff;height:42px; line-height:42px; border-bottom:1px solid #e9e9e9;color:#2d2d2d;}
+.toper .twel{font-size: 14px;}
+.toper .twel a{color:#306cb5;}
+.toper .tfun{padding-top: 9px; padding-right: 5px;}
+.toper .tfun a{position: relative;  float:left; margin-left:10px; width: 25px; height: 25px; margin-left: 35px; background: #306cb5; border-radius:4px;}
+.toper .tfun a:hover{background: #4E8DDA;}
+.toper .tfun .tico{display: block; width: 100%; height: 100%; background: url(/DataShare/img/pcgzs/head_ico.png) no-repeat;}
+.toper .tfun .tico_news{background-position: 0 0;}
+.toper .tfun .tico_home{background-position: 0 -25px;}
+.toper .tfun .tico_layout{background-position: 0 -50px;}
+.toper .tfun .tnews{position: absolute; top: -6px; right: -8px; line-height: 12px; background-color: #ff665c; color:#fff; height: 12px; font-size: 12px; padding:0 4px; border-radius:6px;}
+.toper .tfun .nownews:hover .tnews-list{display: block;}
+.tnews-list{display: none; position:absolute;width:230px;top:26px;left:-102px; z-index: 98; }
+.tnews-list ul{background:rgba(0,0,0,0.7);padding:10px;border-radius:5px;}
+.tnews-list i{display:block; background:url(/DataShare/img/pcgzs/head02.png) center top no-repeat;width:100%;height:10px;}
+.tnews-list ul li{display:block;height:24px; line-height:24px;color:#fff;}
+

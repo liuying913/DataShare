@@ -1,0 +1,103 @@
+﻿.sea-box .seabtn{ background: url(/DataShare/img/pcgzs/anbg01.png) left top repeat-x;width:102px;}
+.sea-box .input01{ box-shadow:none;}
+.upLoad-box .upButton{background: url(/DataShare/img/pcgzs/anbg01.png) left top repeat-x;border-radius:5px;}
+.table01 tbody{background: url(/DataShare/img/pcgzs/anbg01.png) left top repeat-x;}
+.table01 tbody#tbody{ background:none;}
+.table01 tbody th{ background:none; background:url(/DataShare/img/pcgzs/line.png) right center no-repeat;}
+.table01 tbody th.ts{ background:none;}
+
+.table01 tr.even td{ background-color:#eff3f9;}
+.table01{ box-shadow:0 2px 8px #cbd9ea;}
+.newstable-fy-pages{color:#8a898a;width: 500px;margin: 0 auto;}
+.newstable-fy-pages a{border:1px solid #91b1d8;padding:0 5px; line-height:20px;font-size:12px;display:inline-block;zoom:1;*display:inline;margin:0 2px;}
+.newstable-fy-pages a,.newstable-fy-pages a:visited{color:#5581bd;}
+.newstable-fy-pages .everypages a{ text-decoration:none;}
+.newstable-fy-pages .everypages a,.newstable-fy-pages .everypages a:visited{color:#333;}
+.table01 th{padding:12px 15px;}
+.table01 td{padding:10px 15px;}
+.newstable-content .newstable-fy{font-size:12px;}
+.newstable-content .newstable-fy .everypages a{border:none;margin:0;}
+.newstable-fy-pages span{margin:0 15px;}
+.newstable-fy-pages span.everypages{margin:0;}
+#zongyeshu,#zongshuju{color:#8a898a;padding:0 3px;}
+
+/***********************************/
+
+/*20170226新增*/
+#iframeheight  .ico{
+    background: url(/DataShare/img/pcgzs/ico2.png) no-repeat;
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+#iframeheight  .up{
+    background: url(/DataShare/img/pcgzs/ico1.png) no-repeat;
+}
+#iframeheight  .content{
+    background: #e9f0f8;
+    border-bottom: 1px dashed #c2c7cd;
+    display: none;
+    position: relative;
+    -webkit-animation: fadeIn 0.8s ease-out;
+	     -moz-animation: fadeIn 0.8s ease-out;
+	          -o-animation: fadeIn 0.8s ease-out;
+	               animation: fadeIn 0.8s ease-out;
+}
+#iframeheight  .time1,.advert{
+    float: left;
+}
+#iframeheight  .advert img{
+    float: left;
+    margin: 8px 10px;
+}
+#iframeheight  .main{
+    width:80%;
+    float: left;
+    margin-top: 8px;
+    background: none;
+    margin-left: 10px;
+}
+#iframeheight  .main ul li p{
+    font-size: 13px;
+    color: #5f5f5f;
+    min-width: 255px;
+    text-align: left;
+    float: left;
+    line-height: 23px;
+}
+#iframeheight  .time{
+    display: none;
+}
+#iframeheight  .time1,#iframeheight  .time2,#iframeheight  .time3{
+    display: none;
+    width: 100%;
+}
+#iframeheight .items{
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+}
+
+/*个人中心模块*/
+#iframeheight .tspbox .ptit1 {  background: #f4f1f1 url(../img/pcgzs/hptit.png) -2px top no-repeat;  width: 50%;  float: left; cursor: pointer;  }
+#iframeheight .tspbox .ptit1.selectedItem {  background: #d9d9d9 url(../img/pcgzs/hptit1.png) -2px top no-repeat;  }
+#iframeheight .tspbox .ptit1:hover {  background: #d9d9d9 url(../img/pcgzs/hptit1.png) -2px top no-repeat;  }
+.clearfix:after{  content: "";  display: block;  clear: both;  }
+.clearfix{  zoom:1;  }
+.newstable-content .newstable-fy  .everypages>a {  color: red !important;  }
+.editInfo{  background: url(../img/pcgzs/edit.png) no-repeat;  display: inline-block;  width: 18px;  height: 18px;  }
+.deleteInfo{  background: url(../img/pcgzs/delete.png) no-repeat;  display: inline-block;  width: 18px;  height: 18px;  margin-left:5px;  }
+.tsfun-box .btn1{  display: inline-block;  width: 110px;  height: 35px;  border-radius: 5px;  }
+.getJsonBtn{  margin-left:10px;  }
+.mytitle{background: #f4f1f1;}
+.mytitle .ptit1{ border-bottom: none !important;}
+ul.myList{ width:46%;float: left;}
+ul.myList li{padding: 10px 0 5px;  margin: 0px auto;  line-height: 26px;  text-align: left;  width: 100%;  border-bottom: 1px dotted #ccc; }
+ul.myList li  a {background: url(../img/pcgzs/zfxjt.png) no-repeat left top;  color: #2867b2;   padding-left: 15px;}
+ul.myList li  a.rightA{float: right;position: relative;  top: -5px;}
+ul.myList li .softwareD{ padding-left: 20px;font-size: 12px; /*border-top: 1px solid #eee;*/}
+
+
+

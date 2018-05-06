@@ -1,0 +1,180 @@
+cd /home/datashare/tomcat/apache-tomcat-6.0.45/bin
+./shutdown.sh 
+./startup.sh  
+
+
+mysql -u root -p
+删除数据库
+drop database datashare;
+
+create database datashare;
+use datashare;
+set names utf8;
+source /home/datashare/mysql/datashare.sql;
+
+//查看是否开放3306端口  
+netstat -an | grep 3306
+在  /etc/mysql/my.cnf  注释掉bind-address= 127.0.0.1
+
+
+http://localhost:8888/DataShare/excel/dataShare.action?year=2016&ddlmonth=1&buwei=&shengfen=&taizhang=&fileType=1&siteType=1&json
+
+http://localhost:8888/DataShare/excel/dataShare.action?year=2016&buwei=&shengfen=&taizhang=&fileType=1&siteType=1&json
+
+
+z:
+uncompress FileName.Z   --解压
+compress FileName   --压缩
+
+chmod 777 /home/datashare/oracle/database/runInstaller
+chmod 777 /home/datashare/oracle/database/install/.oui
+chmod 777 /home/datashare/oracle/database/install/unzip
+
+>su - root
+#xhost +
+#su - oracle
+>export DISPLAY=:0.0
+>xhost +
+
+
+
+
+
+重启服务器
+shutdown -r now  
+//安装mysql5.5帖子
+http://jingyan.baidu.com/article/425e69e6bbc6c7be14fc1640.html
+//安装jdk1.7
+http://blog.csdn.net/zth1002/article/details/51383508
+//安装tomcat帖子
+http://jingyan.baidu.com/article/90895e0fcfff0364ec6b0b1a.html
+//修改tomcat问题帖子
+http://www.gongzi.org/neither-the-java_home-nor-the-jre_home.html
+
+登陆mysql    
+mysql -u root -p
+create database datashare;
+use datashare;
+set names utf8;
+source /home/datashare/mysql/datashare.sql;
+//删掉数据库
+drop database datashare;
+
+//启动/停止tomcat服务
+cd /home/datashare/tomcat/apache-tomcat-6.0.45/bin/   //路径
+./startup.sh   //启动tomcat     或者sh startup.sh
+./shutdown.sh  //停止tomcat     或者shutdown.sh
+
+//查看8080端口是否被占用
+netstat -apn|grep 8080   
+
+
+//配置jdk
+sudo tar zxvf jdk-7u79-linux-x64.gz   解压
+
+sudo mv jdk1.7.0_79 java  重命名
+
+export JAVA_HOME=/home/datashare/java/jvm/java
+export JRE_HOME=${JAVA_HOME}/jre  
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
+export PATH=${JAVA_HOME}/bin:$PATH  
+
+
+//配置tomcat  
+/home/datashare/tomcat/
+进行解压 tar -xvzf apache-tomcat-6.0.45.tar.gz
+
+
+tar xzf abc.tar.gz -C /home/test/
+tar -zxvf ./linux.x64_11gR2_database_1of2.zip -C /home/datashare/oracle/database
+
+catalina.sh
+export  JAVA_HOME=/home/datashare/java/jvm/java
+export  JAVA_HOME=/home/datashare/java/jvm/java/jre
+
+ubuntu 断网问题
+sudo gedit /etc/ppp/options  解决方法：lcp-echo-failure 4 改成 40
+ubuntu 重启网卡命令
+sudo /etc/init.d/networking restart
+
+2、执行
+gedit /etc/NetworkManager/NetworkManager.conf
+将managed=false 改成true
+
+3、执行
+gedit /etc/resolvconf/resolv.conf.d/base
+加入nameserver为你的DNS即可
+
+nameserver 192.168.1.1
+nameserver 114.114.114.114
+
+4、重启机器。
+
+编辑
+http://www.jb51.net/LINUXjishu/382647.html
+安装oracle
+http://www.jb51.net/article/53769.htm
+//ubuntu 安装oracle
+http://jingyan.baidu.com/article/60ccbceb0c374864cab1973f.html
+
+
+//oracle 数据文件位置
+create tablespace ltwldb datafile 'D:\app\liuying\oradata\orcl\ltwl.dbf' size 500m uniform size 128k;
+alter database           datafile 'D:\app\liuying\oradata\orcl\ltwl.dbf' resize 10m;
+ALTER DATABASE           DATAFILE 'D:\app\liuying\oradata\orcl\ltwl.dbf' AUTOEXTEND ON NEXT 10M MAXSIZE unlimited;
+create user ltwl identified by ltwl default tablespace ltwldb;
+grant CONNECT,RESOURCE,EXP_FULL_DATABASE,IMP_FULL_DATABASE to ltwl;
+
+
+//夸数据库查询 例子一
+grant CREATE PUBLIC DATABASE LINK,DROP PUBLIC DATABASE LINK to gfpuser;//授权
+create public database link dblinkTest2 connect to gfpuser identified by gfpuser using '192.168.1.200/servergfp'
+select count(*) from gfpuser.HIGHFD_DATA@dblinkTest2
+列子二
+select * from jjmx.MONITORCRAW@dblinkJJMX
+grant CREATE PUBLIC DATABASE LINK,DROP PUBLIC DATABASE LINK to gfpuser;
+create public database link dblinkJJMX connect to jjmx identified by jjmx using '192.168.1.200/jjmx'
+
+
+统计数据表 占空间大小
+Select Segment_Name,Sum(bytes)/1024/1024 from User_Extents Group By Segment_Name;
+
+
+select concat(round(sum(data_length/1024/1024),2),'MB') as data_length_MB,  
+concat(round(sum(index_length/1024/1024),2),'MB') as index_length_MB  
+    from tables where  
+    table_schema='test'  
+   and table_name = 'tm_goods';  
+
+
+
+//oracle创建索引
+create index mtype on MONITORCRAW(type);
+create index mtime on MONITORCRAW(time);
+
+//删除小于3分钟的报警
+delete from event_info  where  ceil((To_date(to_char(endtime,'yyyy-mm-dd hh24-mi-ss') , 'yyyy-mm-dd hh24-mi-ss') - To_date(to_char(starttime,'yyyy-mm-dd hh24-mi-ss')  , 'yyyy-mm-dd hh24-mi-ss')) * 24 * 60 * 60)<181
+ 
+
+//修改表字段长度
+alter table USER_SITEINFO MOVE storage(  next 320 ); 
+alter table USER_SITEINFO modify SITE_NUMBER varchar2(2000);
+ 
+imp ltwl/ltwl@ORCL full=y file=E:\20150529.dmp
+exp ltwl/ltwl@ORCL statistics=none file=E:\20150529.dmp
+
+select *, case when nextstate=1 then '结束-->开始' 
+               when nextstate=0 then '开始-->结束'
+ end  as de  from log where msgtype=7 order by shifttime desc
+
+扣税查询：http://salarycalculator.sinaapp.com/city/beijing
+创建数据库：http://jingyan.baidu.com/article/cbcede07cf42ef02f40b4dc2.html
+
+oracle
+http://www.cnblogs.com/dyllove98/archive/2013/06/16/3138761.html
+
+vi /etc/security/limits.conf
+
+
+http://54.222.177.253:8888/DataShare/
+

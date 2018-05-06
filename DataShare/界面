@@ -1,0 +1,39 @@
+1：添加应急事件    整理方式  是个 活动的    0表示自动 1表示手动    1的时候出现抓取范围
+                                                      抓取范围  单位是千米
+      
+                                                      
+2：首页样式
+3：新闻首页 头部
+4：头像合并
+5：新闻编辑、新闻添加
+6：统计分析测试
+7：个人下载界面
+
+审批表文件 位置
+文件上传位置    \docPath
+头像位置              \uploads
+新闻文件位置   \ueditor\jsp\upload
+selectParam  搜索关键字name
+oracle APPLY_USER_REQUIEMENT   NUMBER(8,4)
+
+applyState：
+if("1".equals(applyState)){//未完成
+	af.setLiuCheng("('1','2','3')");
+}else if("2".equals(applyState)){//未审核
+	af.setLiuCheng("('4')");
+}else if("3".equals(applyState)){//已完成  并且通过审核的
+	af.setLiuCheng("('5','6')");
+}else if("4".equals(applyState)){//已完成  并且  没有  通过审核的
+	af.setLiuCheng("('6')");
+}else if("ftp".equals(applyState)){//ftp
+	af.setLiuCheng("('5')");
+}
+
+
+应急事件添加失败
+
+每月的报告  是否添加   应急数据的  共享数据的  流动数据的
+
+数据申请第二个界面   经纬度的校验
+
+站点大事记  修改界面

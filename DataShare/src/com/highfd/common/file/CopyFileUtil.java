@@ -1,0 +1,360 @@
+package com.highfd.common.file;
+
+import java.io.BufferedReader;
+import java.io.File;  
+import java.io.FileInputStream;  
+import java.io.FileNotFoundException;  
+import java.io.FileOutputStream;  
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;  
+import java.io.InputStream;  
+import java.io.OutputStream;  
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.swing.JOptionPane;  
+  
+/** 
+ * 复制文件或文件夹 
+ */  
+public class CopyFileUtil {
+    
+    private static String MESSAGE = "";  
+    
+  
+    /** 
+     * 复制单个文件 
+     *  
+     * @param srcFileName 待复制的文件名 
+     * @param descFileName目标文件名 
+     * @param overlay 如果目标文件存在，是否覆盖 
+     * @return 如果复制成功返回true，否则返回false 
+     */  
+    public static boolean copyFile(String srcFileName, String destFileName, boolean overlay) {
+        File srcFile = new File(srcFileName);  
+  
+        // 判断源文件是否存在  
+        if (!srcFile.exists()) {  
+            MESSAGE = "源文件：" + srcFileName + "不存在！";  
+            //JOptionPane.showMessageDialog(null, MESSAGE);  
+            return false;  
+        } else if (!srcFile.isFile()) {  
+            MESSAGE = "复制文件失败，源文件：" + srcFileName + "不是一个文件！";  
+            //JOptionPane.showMessageDialog(null, MESSAGE);  
+            System.out.println(MESSAGE);
+            return false;  
+        }  
+  
+        // 判断目标文件是否存在  
+        File destFile = new File(destFileName);  
+        if (destFile.exists()) {  
+            // 如果目标文件存在并允许覆盖  
+            if (overlay) {  
+                // 删除已经存在的目标文件，无论目标文件是目录还是单个文件  
+                new File(destFileName).delete();  
+            }  
+        } else {
+            // 如果目标文件所在目录不存在，则创建目录  
+            if (!destFile.getParentFile().exists()) { 
+                // 目标文件所在目录不存在  
+                if (!destFile.getParentFile().mkdirs()) {  
+                    // 复制文件失败：创建目标文件所在目录失败  
+                    return false;  
+                }  
+            }  
+        }  
+  
+        // 复制文件  
+        int byteread = 0; // 读取的字节数  
+        InputStream in = null;  
+        OutputStream out = null;  
+        try {  
+            in = new FileInputStream(srcFile);  
+            out = new FileOutputStream(destFile);  
+            byte[] buffer = new byte[1024];  
+  
+            while ((byteread = in.read(buffer)) != -1) {  
+                out.write(buffer, 0, byteread);  
+            }  
+            return true;  
+        } catch (FileNotFoundException e) {  
+            return false;  
+        } catch (IOException e) {  
+            return false;  
+        } finally {  
+            try {  
+                if (out != null)  
+                    out.close();  
+                if (in != null)  
+                    in.close();  
+            } catch (IOException e) {  
+                e.printStackTrace();  
+            }  
+        }  
+    }  
+  
+    //创建目录结构
+    public static boolean createFileDictory(String destFileName){
+    	// 判断目标文件是否存在  
+        File destFile = new File(destFileName);  
+        // 如果目标文件所在目录不存在，则创建目录  
+        if (!destFile.getParentFile().exists()) { 
+            // 目标文件所在目录不存在  
+            if (!destFile.getParentFile().mkdirs()) {  
+                // 复制文件失败：创建目标文件所在目录失败  
+                return false;  
+            }  
+        }  
+        return true;
+    }
+    
+    public static void main(String[] args) {
+    	for(int i=1;i<=366;i++){
+    		String t = "";
+    		if(i<=9){
+    			t="00"+i;
+    		}else if(i<=99){
+    			t="0"+i;
+    		}else{
+    			t=""+i;
+    		}
+    		File file1 = new File("D:/2019/"+t+"/");
+            if (file1.mkdirs()) {
+                System.out.println("多级层文件夹创建成功！创建后的文件目录为：" + file1.getPath() + ",上级文件为:" + file1.getParent());
+            }
+    	}
+    	
+   	}
+    /**
+     * 创建文件夹
+     */
+    public static boolean createLinuxFileDictory(String path){
+    	boolean mkdirs = true;
+    	File f=new File(path);
+    	if (!f.exists()) { 
+			f.setWritable(true, false);    //设置写权限，windows下不用此语句
+			mkdirs = f.mkdirs();
+			return mkdirs;
+        }
+		return mkdirs;
+    }
+    
+    public boolean createLinuxFileDictory2(String path){
+    	boolean mkdirs = true;
+    	File f=new File(path);
+    	if (!f.exists()) { 
+			f.setWritable(true, false);    //设置写权限，windows下不用此语句
+			mkdirs = f.mkdirs();
+			return mkdirs;
+        }
+		return mkdirs;
+    }
+    
+    /**
+     * 创建文本文件
+     */
+    public static void creatTxtFile(String path) throws IOException{
+    	File file=new File(path);
+    	File parentFile = file.getParentFile();
+    	System.out.println(file.getPath()+"   "+parentFile.getPath());
+    	parentFile.setWritable(true, false);//设置写权限，windows下不用此语句
+    	if (!file.exists()) {
+    		file.createNewFile();
+    		file.setWritable(true, false);//设置写权限，windows下不用此语句
+            System.err.println(file + "临时文件以及创建！");
+        }
+    }
+    
+    /**
+     * 读取文本文件
+     */
+    public static String readTxtFile(String filename){
+        String read;
+        String readStr = "";
+        FileReader fileread;
+        try {
+            fileread = new FileReader(filename);
+            BufferedReader bufread = new BufferedReader(fileread);
+            try {
+                while ((read = bufread.readLine()) != null) {
+                    readStr = readStr + read+ "\r\n";
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("处理结果:"+ "\r\n" + readStr);
+        return readStr;
+    }
+    
+    /**
+     * 判断文件是否存在
+     */
+    public static boolean fileExist(String path) throws IOException{
+    	File file=new File(path);
+    	if (!file.exists()) {
+    		return false;
+        }else{
+        	return true;
+        }
+    }
+    
+    /**
+     * 写文本文件
+     */
+    public static void writeTxtFile(String path,String content) {
+    	FileWriter fw = null;
+    	if(null==path || "".equals(path) || path.length()==0){
+    		return;
+    	}
+    	try {
+	    	//如果文件存在，则追加内容；如果文件不存在，则创建文件
+	    	File f=new File(path);
+	    	fw = new FileWriter(f, true);
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	}
+    	PrintWriter pw = new PrintWriter(fw);
+    	pw.println(content);
+    	pw.flush();
+    	try {
+	    	fw.flush();
+	    	pw.close();
+	    	fw.close();
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	}
+    }
+    
+    
+ 
+    
+    
+
+    /**
+     * 递归删除目录下的所有文件及子目录下所有文件
+     */
+    private static boolean deleteDir(File dir) {
+        if (dir.isDirectory()) {
+            String[] children = dir.list();
+            for (int i=0; i<children.length; i++) {
+                boolean success = deleteDir(new File(dir, children[i]));
+                if (!success) {
+                    return false;
+                }
+            }
+        }
+        // 目录此时为空，可以删除
+        return dir.delete();
+    }
+    /**
+     *删除文件列表
+     */
+    public static boolean deleteDirList(String newDir2) {
+        boolean success = deleteDir(new File(newDir2));
+        if (success) {
+            System.out.println("Successfully deleted populated directory: " + newDir2);
+        } else {
+            System.out.println("Failed to delete populated directory: " + newDir2);
+        }     
+        return success;
+    }
+    
+   
+  
+    
+
+	
+	
+    
+	//判断该文件夹的自类中 是否存在 1hz 50hz 和 .txt文件
+	public static boolean getDistinctEarthQuakeList(String path){
+		
+		File[] childFiles = new File(path).listFiles();
+		Map<String,Boolean> map = new HashMap<String,Boolean>();
+		for(int f=0;f<childFiles.length;f++){
+			if(childFiles[f].getName().toLowerCase().equals("1hz")){
+				map.put("1hz", true);
+			}else if(childFiles[f].getName().toLowerCase().equals("50hz")){
+				map.put("50hz", true);
+			}else if(childFiles[f].getName().toLowerCase().endsWith(".txt")){
+				map.put("txt", true);
+			}
+		}
+		if(map.size()==3){
+			return true;
+		}
+		return false;
+	}
+    
+    
+	 //获得子类的 文件夹列表
+	 public static List<String> getChildFiles(String filePath){
+		 List<String> list = new ArrayList<String>();
+		 File dir = new File(filePath);
+		 File[] fs = dir.listFiles();
+		 if(null==fs){return null;}
+		 for(int i=0; i<fs.length; i++){
+			 if(fs[i].isDirectory()){
+				 list.add(fs[i].getPath());
+			 }
+		 }
+		 return list;
+	 }
+	 
+	 //获得子类的 文件列表
+	 public static String getChildTxtFile(String filePath){
+		 File dir = new File(filePath);
+		 File[] fs = dir.listFiles();
+		 if(null==fs){return null;}
+		 for(int i=0; i<fs.length; i++){
+			 if(!fs[i].isDirectory() && fs[i].getPath().endsWith(".txt")){
+				 return fs[i].getPath();
+			 }
+		 }
+		 return null;
+	 }
+	 
+	 
+	 
+	 
+
+  
+	 public static void copy(String fromPath, String toPath) {
+		File[] fl = new File(fromPath).listFiles();
+		File file = new File(toPath);
+	    if (!file.exists()){ // 如果文件夹不存在
+	        file.mkdirs(); // 建立新的文件夹
+	    }
+	    for (int i = 0; i < fl.length; i++) {
+	        if (fl[i].isFile()) {// 如果是文件类型就复制文件
+	            try {
+	                FileInputStream fis = new FileInputStream(fl[i]);
+	                FileOutputStream out = new FileOutputStream(new File(file.getPath()+ File.separator + fl[i].getName()));
+	               
+	                int count = fis.available();
+	                byte[] data = new byte[count];
+	                if ((fis.read(data)) != -1) {
+	                    out.write(data); // 复制文件内容
+	                }
+	                out.close(); // 关闭输出流
+	                fis.close(); // 关闭输入流
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        }
+	        if (fl[i].isDirectory()) {// 如果是文件夹类型
+	            File des = new File(file.getPath() + File.separator+ fl[i].getName());
+	            des.mkdirs(); // 在目标文件夹中创建相同的文件夹
+	            copy(fl[i].getPath(), des.getPath()); // 递归调用方法本身
+	        }
+	    }
+	}    
+	  
+}  

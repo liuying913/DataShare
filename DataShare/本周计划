@@ -1,0 +1,218 @@
+ftp上传下载说明
+http://www.cnblogs.com/lixuwu/p/5693310.html
+ftp 多长时间一样 就只算一个
+
+
+本周任务：
+ 1：把界面总体调整一下
+ 2：把广域网台站列表要过来，导入库中
+ 3：将FTP展示的内容跟用户申请的列表关联上（只让用户看到他们申请的内容）
+ 4：将服务器搞好（地震局的）
+ 5：NAS盘挂靠
+ 6：FTP上传，实时入数据库
+ 
+ md5加密
+
+ 界面：
+ 1：分页搞完
+ 2：流程图完善
+ 3：流程界面完善
+ 
+ 未来计划：
+ 
+ 后端工作
+ 1：消息提醒模块
+ 2：数据查询模块 
+ 3：统计管理模块
+ 4：FTP下载，实时入库
+ 5：数据库模型提炼
+ 
+ 前端工作：
+ 前端ifream框架改造
+ 
+目录生成
+       30S  单站月度 单站年度   多站日度  多站月度  多站年度
+        流动数据    多站年度
+       共享数据    单站月度 单站年度   多站日度  多站月度  多站年度
+
+统计分析
+   //30S数据申请单       地图显示（选择申请单）（需要不需要呢？？？）
+   30S
+	   （1）面向切面分析 地图展示  （是否可以搞成动画呢？定时每秒钟一天）
+	      30S数据下载记录  地图显示（可以选择 时间跨度、选择部委、选择省份、选择台站、选择登陆账号、选择？）
+	      30S数据整理            地图显示（可以选择 时间跨度、选择部委、选择省份、选择台站、选择登陆账号、选择？）
+	   （2）纵向分析 曲线展示
+   	      30S数据下载记录   曲线显示 （可以选择 时间跨度、选择部委、选择省份、选择台站、选择登陆账号、选择？）
+   	      30S数据整理             曲线显示 （可以选择 时间跨度、选择部委、选择省份、选择台站、选择登陆账号、选择？）
+   	  （3）  表格展示
+          30S数据下载记录   表格显示 （可以选择 时间跨度、选择部委、选择省份、选择台站、选择登陆账号、选择？）
+   	      30S数据整理             表格显示 （可以选择 时间跨度、选择部委、选择省份、选择台站、选择登陆账号、选择？）
+ 
+ 
+ 
+	综合统计
+	           文件下载：地图展示（具体某一天）               月度年度展示（月度、年度）                下载的文件  文件sys时间 count(*)
+		台站文件下载：地图展示（某个时间范围内） 
+		用户文件下载：地图展示
+		文件下载月度统计
+		文件下载省份统计
+		文件下载部委统计
+	
+    陆态流动数据（2000站   4天的数据，直接拷贝过来的  一年一次）
+    
+    
+应急数据
+应急事件输入：
+应急事件列表：  详细查看、目录、表格查看
+
+http://localhost:9080/DataShare/excel/dataShare.action?year=2016&ddlmonth=1&buwei=&shengfen=110000&taizhang=BJFS&fileType=1&siteType=1&json
+//颜色设置
+http://blog.csdn.net/downkang/article/details/14164811
+
+
+数据申请     提醒模块
+30秒日常数据整理（更新日期、更新时间、更新频率）
+共享数据整理          （更新日期、更新时间、更新频率）
+
+流动数据入库提醒（具体时间）
+地震应急数据下载提醒（开启 关闭）
+申请数据有效期（时间长度）
+
+https://msg.taobao.com/message/list.htm?spm=a21bo.50862.1997563201.4.pC6JkF&scm=1229.325.1.2
+
+
+
+dic_use_info 用户常用软件
+
+
+日历底图没问题
+两个问题：涂色是用圆还是方块；用再浅一些的颜色，做出来全部站点数据都不缺，个别缺一天两天的图才能看出来效果
+
+还有个问题是感觉还是很松散呢
+
+
+
+
+APPLY_USER 添加字段 year
+YEAR	N	VARCHAR2(10)	Y			
+
+//添加 应急事件申请表
+create table EARTHQUAKE_APPLY
+(
+  id            NUMBER(11) not null,
+  user_id       NUMBER(11),
+  earthquake_id NUMBER(11),
+  createtime    TIMESTAMP(6),
+  starttime     TIMESTAMP(6),
+  endtime       TIMESTAMP(6),
+  type          NUMBER(11) not null,
+  remark        VARCHAR2(200)
+);
+//数据下载表
+create table DOWNHISTORY_INFO_2017(
+  id         NUMBER(11) not null,
+  username   VARCHAR2(20),
+  fileinfoid NUMBER(11),
+  downtime   TIMESTAMP(6),
+  filename   VARCHAR2(20)
+);
+comment on column EARTHQUAKE_APPLY.type
+  is ' 0:申请完成   3:申请通过  4:拒绝';
+
+create sequence EARTHQUAKE_apply_SEQ
+minvalue 1
+maxvalue 999999999
+start with 100
+increment by 1
+cache 20;
+
+2017-04-17
+ftp账号管理：账号添加、密码修改
+30S数据申请：
+地震应急申请  申请、同意、通知
+30S 地震应急  FTP合并
+根据地震应急配置文件 设置整理范围(公里)
+
+ftp数据下载  效率问题
+
+
+//地震应急事件配置
+create table EARTHQUAKECONFIG
+(
+  id               NUMBER(11) not null,
+  earthquakefirst  VARCHAR2(11),
+  earthquakesecond VARCHAR2(11),
+  earthquakethird  VARCHAR2(11),
+  earthquakeforth  VARCHAR2(11),
+  applyvalidityday VARCHAR2(11),
+  applyperiod      VARCHAR2(11)
+);
+-- Add comments to the table 
+comment on table EARTHQUAKECONFIG
+  is '应急数据设置表';
+-- Add comments to the columns 
+comment on column EARTHQUAKECONFIG.id
+  is '主键ID';
+comment on column EARTHQUAKECONFIG.earthquakefirst
+  is '[5-6)级地震';
+comment on column EARTHQUAKECONFIG.earthquakesecond
+  is '[6-7)级地震';
+comment on column EARTHQUAKECONFIG.earthquakethird
+  is '{7-8)级地震';
+comment on column EARTHQUAKECONFIG.earthquakeforth
+  is '超过8地震';
+comment on column EARTHQUAKECONFIG.applyvalidityday
+  is '申请有效期';
+comment on column EARTHQUAKECONFIG.applyperiod
+  is '申请期限';
+  
+  
+  
+2017-04-24  EARTHQUAKE  表添加字段  （应急数据整理方式）
+CRAWTYPE		NUMBER(11)	Y			不填、0 是默认  按照规定的  1:用户手动填写
+CRAWRANGE		VARCHAR2(255)	Y			抓取范围 单位千米
+
+2017-05-23   doc_use_info  添加字段（排序功能）
+DOC_ORDER	N	NUMBER(11)	Y			排序
+  
+
+2017-05-18 (Note_info)  
+create table NOTE_INFO
+(
+  id         NUMBER(11) not null,
+  applyid    NUMBER(11),
+  applyFileType   NUMBER(11),
+  content    VARCHAR2(200),
+  process    NUMBER(11),
+  
+  ismanager  NUMBER(11),
+  
+  readflag   NUMBER(11),
+  createtime TIMESTAMP(6)
+);
+
+1,2);//通知 用户 有未完成的消息
+      
+4,1);//通知 管理员 有未审核的申请
+4,2);//通知 用户 等待审核的申请
+
+5,2);//通知 用户 申请通过
+6,2);//通知 用户 申请未通过
+
+
+
+  30S  申请状态
+  1、2、3 未完成
+  4   待审核
+  5 审核通过
+  6 审核未通过
+  7 申请过期
+  
+  
+  未完成 1
+  待审核  4
+  审核通过5
+  审核未通过 6
+  
+  DATAQUALITY_INFO （首页30s公告  应急事件公告） 表添加字段
+  EARTHQUAKEID  NUMBER(11)  地震应急事件id
