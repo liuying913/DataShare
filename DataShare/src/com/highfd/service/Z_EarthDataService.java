@@ -46,4 +46,7 @@ public interface Z_EarthDataService {
 	
 	//50HZ开始整理
 	public void start50Hz(EarthQuake earthQuake,SiteInfo siteInfo,Date startDate,String filePath)throws Exception;
+	
+	//初始化 启动应急事件时候的台站列表
+	public void iniMainData(EarthQuake earthQuake,SiteInfo siteInfo,Date startDate,String filePath) throws Exception;
 }

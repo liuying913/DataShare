@@ -278,7 +278,7 @@ public class Z_EarthDataServiceImpl implements Z_EarthDataService {
 		}
 	}
 	
-	//数据整理  数据入库操作
+	//数据整理  数据入库操作111
 	public void insertDB(List<FileInfo> fileList,String year4,String to2_final_AllPath){
 		List<FileInfo> insertList = new ArrayList<FileInfo>();
 		try {
@@ -628,4 +628,168 @@ public class Z_EarthDataServiceImpl implements Z_EarthDataService {
 	     }
 	     return null;
 	}
+	
+	
+	
+	
+	/**
+	 * 初始化 启动应急事件时候的台站列表
+	 */
+	public void iniMainData(EarthQuake earthQuake,SiteInfo siteInfo,Date startDate,String filePath) throws Exception{
+		ini1Hz(earthQuake, siteInfo, startDate, filePath);
+		ini50Hz(earthQuake, siteInfo, startDate, filePath);
+		
+	}
+	
+	//初始化1HZ数据
+	public void ini1Hz(EarthQuake earthQuake,SiteInfo siteInfo,Date startDate,String filePath)throws Exception{
+		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(startDate);
+		cal.add(Calendar.DAY_OF_MONTH,-2);
+		for(int i=1;i<=3;i++){
+			//前一天
+		    cal.add(Calendar.DAY_OF_MONTH,1);
+		    Date dateStrings = cal.getTime();
+		    System.out.println(siteInfo.getSiteName()+"   "+Thread.currentThread().getId()+"  地震应急数据初始化 1Hz  第"+i+"天："+dFormat.format(dateStrings));
+			FileInfo fileInfo = setFileInfo("1",i, dFormat.format(dateStrings), earthQuake, siteInfo);
+			iniDownT02( fileInfo, siteInfo, dFormat.format(dateStrings), filePath);
+		}
+	}
+	
+	//初始化50HZ
+	public void ini50Hz(EarthQuake earthQuake,SiteInfo siteInfo,Date startDate,String filePath)throws Exception{
+		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(startDate);
+	    Date dateStrings = cal.getTime();
+	    System.out.println(siteInfo.getSiteName()+"   "+Thread.currentThread().getId()+"  地震应急数据初始化 50Hz "+dFormat.format(dateStrings));
+	    FileInfo fileInfo = setFileInfo("50",1, dFormat.format(dateStrings), earthQuake, siteInfo);
+	    iniDown_50HZ_T02(fileInfo, siteInfo, dFormat.format(dateStrings), filePath);
+	}
+	/**
+	 * 初始化1HZ数据
+	 */
+	public void iniDownT02(FileInfo fileInfo,SiteInfo siteInfo,String beforeDayStr,String filePath) throws Exception{
+		
+		String year4 = StaticUtil.getYearByNYR(beforeDayStr)+"";//年
+		String day = beforeDayStr.substring(8, 10);//日
+		
+		List<FileInfo> fileList = new ArrayList<FileInfo>();
+		String siteNumber = siteInfo.getSiteNumber();
+		String to2_final_AllPath = filePath+"/1Hz/"+siteNumber+"/"+day;
+	    new CopyFileUtil().createLinuxFileDictory2(to2_final_AllPath);//非静态方法
+
+		//1赫兹  24小时，每小时4个文件
+		int num_50hz = 1;
+		for(int i = (int)'A'; i <= (int)'X'; ++i){
+            char hours = (char)(i + 32);    
+            for(int j=0;j<4;j++){
+            	
+            	String minutes = "";
+            	if(j==0){minutes="00";}if(j==1){minutes="15";}if(j==2){minutes="30";}if(j==3){minutes="45";}
+            	String fileName = siteNumber.toUpperCase()+fileInfo.getFileDayYear()+hours+minutes+"B"+".T02";
+     			
+     			fileInfo.setFileName(fileName);
+    			fileInfo.setFilePath(to2_final_AllPath);
+    			fileInfo.setFileSize(0d);
+     	    	fileInfo.setEarthQuakeNum(num_50hz++);
+     	    	FileInfo newFile = (FileInfo) fileInfo.clone();//克隆对象
+     	    	fileList.add(newFile);//全部的文件
+            }
+        }
+		iniInsertDB(fileList, year4, to2_final_AllPath);
+	}
+	
+	
+	/**
+	 *初始化 50HZ ftp文件
+	 */
+	public void iniDown_50HZ_T02(FileInfo fileInfo,SiteInfo siteInfo,String dateStrings,String filePath) throws Exception{
+		
+		int hour = Integer.valueOf(dateStrings.substring(11, 13));
+        
+		//未实行的功能
+		if(hour==0){
+			//当天
+			iniCheckHour( fileInfo, siteInfo, dateStrings, filePath,0,5);
+			//当天
+			iniCheckHour( fileInfo, siteInfo, dateStrings, filePath,1,9);
+			//前一天  
+			String beforeDay = TimeUtils.getValidityTime(dateStrings, -1);
+			String yearDay =StaticUtil.getThreeLengthCountDays(StaticUtil.getCountDaysByNYR(beforeDay));//年积日
+			fileInfo.setFileDayYear(yearDay);
+			iniCheckHour( fileInfo, siteInfo, beforeDay, filePath,23,1);
+        }else if(hour==23){
+        	//当天
+        	iniCheckHour( fileInfo, siteInfo, dateStrings, filePath,hour-1,1);
+			//当天
+        	iniCheckHour( fileInfo, siteInfo, dateStrings, filePath,hour,5);
+			//后一天
+			String nextDay = TimeUtils.getValidityTime(dateStrings, +1);
+			String yearDay =StaticUtil.getThreeLengthCountDays(StaticUtil.getCountDaysByNYR(nextDay));//年积日
+			fileInfo.setFileDayYear(yearDay);
+			iniCheckHour( fileInfo, siteInfo, nextDay, filePath,0,9);
+        }else{
+        	//当天
+        	iniCheckHour( fileInfo, siteInfo, dateStrings, filePath,hour-1,1);
+			//当天
+        	iniCheckHour( fileInfo, siteInfo, dateStrings, filePath,hour,5);
+			//当天
+        	iniCheckHour( fileInfo, siteInfo, dateStrings, filePath,hour+1,9);
+        }
+	}
+	
+	public void iniCheckHour(FileInfo fileInfo,SiteInfo siteInfo,String dateStrings,String filePath,int hour,int num){
+		try {
+			//压缩成d文件，并压缩成d.Z文件
+			String year4 = StaticUtil.getYearByNYR(dateStrings)+"";//年
+			String day = dateStrings.substring(8, 10);//日
+			String siteNumber = siteInfo.getSiteNumber();
+			List<FileInfo> fileList = new ArrayList<FileInfo>();
+			String to2_final_AllPath = filePath+"/50Hz/"+siteNumber+"/"+day;
+		    CopyFileUtil.createLinuxFileDictory(to2_final_AllPath);
+	 		
+			//50赫兹  前后三个小时，每小时4个文件
+	        for(int i = (hour+97); i <= (int)(hour+97); ++i){
+	            char lowercase = (char)(i);    
+	            for(int j=0;j<4;j++){
+	            	String minutes = "";
+	            	if(j==0){minutes="00";}if(j==1){minutes="15";}if(j==2){minutes="30";}if(j==3){minutes="45";}
+	            	String fileName = siteNumber.toUpperCase()+fileInfo.getFileDayYear()+lowercase+minutes+"C"+".T02";
+	     			
+	     			fileInfo.setFileName(fileName);
+	    			fileInfo.setFilePath(to2_final_AllPath);
+	    			fileInfo.setFileSize(0d);
+	    			
+	     	    	fileInfo.setEarthQuakeNum(num++); 
+	     	    	FileInfo newFile = (FileInfo) fileInfo.clone();//克隆对象
+	     	    	fileList.add(newFile);//全部的文件
+	            }
+	        }
+	        iniInsertDB(fileList, year4, to2_final_AllPath);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	//初始化入库操作1HZ
+	public void iniInsertDB(List<FileInfo> fileList,String year4,String to2_final_AllPath){
+		List<FileInfo> insertList = new ArrayList<FileInfo>();
+		try {
+		    for(FileInfo info:fileList){
+				info.setFileFlag(0);
+				insertList.add(info);//入库
+			
+		    }
+		    applyDao.insert_EarhtData_Files(year4, insertList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

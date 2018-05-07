@@ -68,7 +68,6 @@ public class EarthQuakeDataReductionController {
 		return "{\"date\":[{\"code\":\""+code+"\",\"msg\":\""+message+"\"}]}";
 	}
 	
-	
 	class DataCleanThread extends Thread {
 		
 		private String earthId;
@@ -88,6 +87,15 @@ public class EarthQuakeDataReductionController {
 				FileTool.outToText(earthQuake, filePath,textName+".txt");
 				
 				List<SiteInfo> siteInfoList = siteService.getSiteInfoList("1", "");//1 30S台站
+				//初始化站点
+				for(int i=0;i<siteInfoList.size();i++){
+					SiteInfo siteInfo = siteInfoList.get(i);
+					//根据震级 判断是否在200 到 600公里 范围内
+					double distance = LocationUtils.getDistance(Double.valueOf(siteInfo.getSiteLat()), Double.valueOf(siteInfo.getSiteLng()), Double.valueOf(earthQuake.getSiteLat()), Double.valueOf(earthQuake.getSiteLon()));
+					boolean rangeByDistance = LocationUtils.rangeByDistance(distance, distianceByGrade);
+					if(!rangeByDistance){continue;}
+					z_EarthDataService.iniMainData(earthQuake, siteInfo, startDate, filePath);
+				}
 				for(int i=0;i<siteInfoList.size();i++){
 					SiteInfo siteInfo = siteInfoList.get(i);
 					//根据震级 判断是否在200 到 600公里 范围内
@@ -147,6 +155,16 @@ public class EarthQuakeDataReductionController {
 		String filePath = Final_Path+"/"+startTime.substring(0, 4)+"/"+textName;
 		FileTool.outToText(earthQuake, filePath,textName+".txt");
 		List<SiteInfo> siteInfoList = siteService.getSiteInfoList("1", "");//1 30S台站
+		//初始化站点
+		for(int i=0;i<siteInfoList.size();i++){
+			SiteInfo siteInfo = siteInfoList.get(i);
+			//根据震级 判断是否在200 到 600公里 范围内
+			double distance = LocationUtils.getDistance(Double.valueOf(siteInfo.getSiteLat()), Double.valueOf(siteInfo.getSiteLng()), Double.valueOf(earthQuake.getSiteLat()), Double.valueOf(earthQuake.getSiteLon()));
+			boolean rangeByDistance = LocationUtils.rangeByDistance(distance, distianceByGrade);
+			if(!rangeByDistance){continue;}
+			new DataThread( startDate,earthQuake,siteInfo,filePath).start();
+			z_EarthDataService.iniMainData(earthQuake, siteInfo, startDate, filePath);
+		}
 		for(int i=0;i<siteInfoList.size();i++){
 			SiteInfo siteInfo = siteInfoList.get(i);
 			//根据震级 判断是否在200 到 600公里 范围内
