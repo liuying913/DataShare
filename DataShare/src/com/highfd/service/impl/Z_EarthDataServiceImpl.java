@@ -50,7 +50,7 @@ public class Z_EarthDataServiceImpl implements Z_EarthDataService {
 	UserService userService;
 	@Autowired
 	HighFDService highFDService;
-	
+
 	/**
 	 * 主方法
 	 */

@@ -2,6 +2,7 @@ package com.highfd.controller;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -143,7 +144,7 @@ public class ExcelController {
 	        	 if(isYear){
 	        		 sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, dayNumbers+2));//合并单元格
 	        	 }else{
-	        		 sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, dayNumbers+1));//合并单元格
+	        		 sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, dayNumbers+2));//合并单元格
 	        	 }
 	         }
 	         if(year.indexOf("-")>-1){//日度数据
@@ -165,25 +166,29 @@ public class ExcelController {
 		        	 
 		        	 cell = titleRow.createCell(title2++);//创建一列
 		        	 cell.setCellValue("：");
-		        	 cell = titleRow.createCell(title2++);//创建一列
-		        	 cell.setCellValue("空缺");
+		        	
 		        	 cell = titleRow.createCell(title2++);//创建一列
 		        	 cell.setCellStyle(getStyle(workbook,IndexedColors.WHITE.getIndex(),isYear));
-		        	 
 		        	 cell = titleRow.createCell(title2++);//创建一列
-		        	 cell.setCellValue("完整");
+		        	 cell.setCellValue("空缺");
+		        	 
+		        	
 		        	 cell = titleRow.createCell(title2++);//创建一列
 		        	 cell.setCellStyle(getStyle(workbook,IndexedColors.BRIGHT_GREEN.getIndex(),isYear));
-		        	 
 		        	 cell = titleRow.createCell(title2++);//创建一列
-		        	 cell.setCellValue("补回");
+		        	 cell.setCellValue("完整");
+		        	 
+		        	
 		        	 cell = titleRow.createCell(title2++);//创建一列
 		        	 cell.setCellStyle(getStyle(workbook,IndexedColors.YELLOW.getIndex(),isYear));
-		        	 
 		        	 cell = titleRow.createCell(title2++);//创建一列
-		        	 cell.setCellValue("缺失");
+		        	 cell.setCellValue("补回");
+		        	 
+		        	
 		        	 cell = titleRow.createCell(title2++);//创建一列
 		        	 cell.setCellStyle(getStyle(workbook,IndexedColors.RED.getIndex(),isYear));
+		        	 cell = titleRow.createCell(title2++);//创建一列
+		        	 cell.setCellValue("缺失");
 		        	 
 		        	 cell = titleRow.createCell(title2++);//创建一列
 		        	 cell.setCellValue("(历元数量小于600则认为是缺失)");
@@ -233,7 +238,14 @@ public class ExcelController {
 		         //tilteCell.setCellStyle(style);//设置居中
 		         tilteCell.setCellStyle(getTitleStyle(workbook,IndexedColors.ROYAL_BLUE.getIndex(),isYear));//设置背景颜色
 		         sheet.setColumnWidth(1, 2800); //第一个参数代表列id(从0开始),第2个参数代表宽度值
+	         }else if(year.indexOf("-")==-1){//月度数据{
+	        	 tilteCell = titleRow.createCell(dayNumbers+2);//创建一列
+		         tilteCell.setCellValue("完整率");
+		         //tilteCell.setCellStyle(style);//设置居中
+		         tilteCell.setCellStyle(getTitleStyle(workbook,IndexedColors.ROYAL_BLUE.getIndex(),isYear));//设置背景颜色
+		         sheet.setColumnWidth(1, 2800); //第一个参数代表列id(从0开始),第2个参数代表宽度值
 	         }
+
 	         if(year.indexOf("-")>-1){//日度数据+历元数量
 	        	 tilteCell = titleRow.createCell(dayNumbers+2);//创建一列
 		         //tilteCell.setCellStyle(style);//设置居中
@@ -263,6 +275,7 @@ public class ExcelController {
 	             cell.setCellStyle(getStyle(workbook,IndexedColors.WHITE.getIndex(),isYear));//设置背景颜色
 	             
 	             double yearWzl=0.0;//年度完整率
+	             double realDay=0.0;
 	             String ephemNumber = "";
 	             for (String days : dayMap.keySet()) {
 	            	 FileInfoDirect fileInfoD = dayMap.get(days);    ephemNumber = fileInfoD.getEphemNumber();//日度的历元数量
@@ -273,10 +286,13 @@ public class ExcelController {
 		             if(fileInfoD.getFileFlag()==1){
 		            	 cell.setCellStyle(getStyle(workbook,IndexedColors.BRIGHT_GREEN.getIndex(),isYear));
 		            	 yearWzl++;
+		            	 realDay++;
 		             }else if(fileInfoD.getFileFlag()==2){
 		            	 cell.setCellStyle(getStyle(workbook,IndexedColors.YELLOW.getIndex(),isYear));
 		            	 yearWzl++;
+		            	 realDay++;
 		             }else if(fileInfoD.getFileFlag()>=3){
+		            	 realDay++;
 		            	 cell.setCellStyle(getStyle(workbook,IndexedColors.RED.getIndex(),isYear));
 		             }else{
 		            	 cell.setCellStyle(getStyle(workbook,IndexedColors.WHITE.getIndex(),isYear));
@@ -287,13 +303,22 @@ public class ExcelController {
 	            	 cell = row.createCell(dayNumber++);//创建列
 	            	 cell.setCellValue(" "+ephemNumber+" ");
 	            	 cell.setCellStyle(getStyle(workbook,IndexedColors.WHITE.getIndex(),isYear));
+		         }else{
+		        	 if(isYear){//年度  追加完整率
+			        	 cell = row.createCell(dayNumber++);//创建列
+		            	 cell.setCellValue(NumberChange.getFiveNumber(yearWzl,year)+"%");
+		            	 cell.setCellStyle(getStyle(workbook,IndexedColors.WHITE.getIndex(),isYear));
+		        	 }else{//月底追加完整率
+		        		 cell = row.createCell(dayNumber++);//创建列
+	        			 NumberFormat nf = NumberFormat.getNumberInstance();
+	        			 nf.setMinimumFractionDigits(4);
+	        			 String str = nf.format(yearWzl/realDay*100).replace(".0000", "");
+		            	 cell.setCellValue(str+"%");
+		            	 cell.setCellStyle(getStyle(workbook,IndexedColors.WHITE.getIndex(),isYear));
+		        	 }
 		         }
 	             
-	             if(isYear){//年度  追加完整率
-			         cell = row.createCell(dayNumber++);//创建列
-	            	 cell.setCellValue(NumberChange.getFiveNumber(yearWzl,year)+"%");
-	            	 cell.setCellStyle(getStyle(workbook,IndexedColors.WHITE.getIndex(),isYear));
-		         }
+			        
 	         }
 	        
 	         fOut = response.getOutputStream();  
@@ -309,6 +334,7 @@ public class ExcelController {
 	     System.out.println("文件生成...");  
 	}
 	
+
 	
 	//数据目录下载(日度)
 	@RequestMapping("dataShareDayExcel")  

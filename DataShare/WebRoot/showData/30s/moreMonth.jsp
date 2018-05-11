@@ -80,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
                          </div>
 					</div>
-					</br>
+					<br>
 					<div class="warp-button">
 						<button type="button" value="30S" class="shengfen-button"><img src="/DataShare/img/s1.png"/>查询</button>
 						<c:if test="${sessionScope.userType == '1'}"><button type="button" class="button"><img src="/DataShare/img/s2.png"/>导出</button></c:if>

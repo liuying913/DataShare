@@ -1155,44 +1155,41 @@ $(document).ready(function() {
 					var hy="<table class='table01' border='1' width='100%' style=''><tr>";
 					hy+='<th>地区</th><th>台站</th>';
 					for(j=1;j<=ui;j++){if(j<=9){hy+='<th>0'+j+'</th>';}else{hy+='<th>'+j+'</th>';}}
+					hy+='<th style="width:35px;">完整率</th>';
 					
 					hy+="<tbody id='tbody'>";
 					$.each(data,function(key,value){
-						
 						hy+="<tr><td class='ts01'>" + key.split("_")[0].split("&")[1] + "</td> <td>" + key.split("_")[1] + "</td>";
-						
-						//for(j=1;j<32;j++){
-							
 							var ty="0";
+							var gooNumber=0;
+							var dayNumber=0;
 							$.each(value, function(i, item) {
-								//if(j==i){
-									ty="1";
-									//if(item.fileFlag=="1"){hy+="<td class='yellow'>"+item.fileFlag+"</td>";}else{hy+="<td>"+item.fileFlag+"</td>";}
-									if(item.fileFlag=="0"){
-										//hy+="<td class='yellow'>"+item.fileFlag+"</td>";
-										hy+="<td></td>";
-									}else if(item.fileFlag=="1"){
-										//hy+="<td class='green'>"+item.fileFlag+"</td>";
-										hy+="<td class='green'></td>";
-									}
-									else if(item.fileFlag=="2"){
-										//hy+="<td class='yellow'>"+item.fileFlag+"</td>";
-										hy+="<td class='green'></td>";
-									}else if(item.fileFlag=="3"){
-										hy+="<td class='red'></td>";
-										//hy+="<td class='red'></td>";
-									}else if(item.fileFlag=="4"){
-										//hy+="<td class='red'>"+item.fileFlag+"</td>";
-										hy+="<td class='red'></td>";
-									}else{
-										//hy+="<td>"+item.fileFlag+"</td>";	
-										hy+="<td class='red'></td>";
-									}
-									
-									return true;
-								//}
+								ty="1";
+								//if(item.fileFlag=="1"){hy+="<td class='yellow'>"+item.fileFlag+"</td>";}else{hy+="<td>"+item.fileFlag+"</td>";}
+								if(item.fileFlag=="0"){
+									hy+="<td></td>";
+								}else if(item.fileFlag=="1"){
+									dayNumber = parseInt(dayNumber)+1;
+									gooNumber = parseInt(gooNumber)+1;
+									hy+="<td class='green'></td>";
+								}
+								else if(item.fileFlag=="2"){
+									dayNumber = parseInt(dayNumber)+1;
+									gooNumber = parseInt(gooNumber)+1;
+									hy+="<td class='green'></td>";
+								}else if(item.fileFlag=="3"){
+									dayNumber = parseInt(dayNumber)+1;
+									hy+="<td class='red'></td>";
+								}else if(item.fileFlag=="4"){
+									dayNumber = parseInt(dayNumber)+1;
+									hy+="<td class='red'></td>";
+								}else{
+									dayNumber = parseInt(dayNumber)+1;
+									hy+="<td class='red'></td>";
+								}
+								if(i=="10"+ui){hy+="<td>"+(gooNumber/dayNumber*100).toFixed(2)+"%</td>";}
+								return true;
 							});							
-						 //}
 						hy+="</tr>";
 					});	
 					hy+="</tbody>";
