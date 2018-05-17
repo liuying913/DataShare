@@ -3,7 +3,7 @@ import java.sql.*;
 
 public class SqlServer2005Test {
     final static String cfn = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    final static String url = "jdbc:sqlserver://172.128.8.42:1433;DatabaseName=TPPDB";
+    final static String url = "jdbc:sqlserver://172.128.8.82:1433;DatabaseName=TPPDB";
     
     public static void main(String[] args) {
         Connection con = null;

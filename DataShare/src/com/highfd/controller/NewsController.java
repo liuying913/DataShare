@@ -281,6 +281,32 @@ public class NewsController {
 		return json.toString();
 	}
 	
+	/**
+	 * 模糊查询  每月数据整理状态
+	 */
+	@RequestMapping(value = "/news/select_DataQualityList", produces = { "application/json;charset=UTF-8" })
+	@ResponseBody
+	public String select_DataQualityList(HttpServletRequest request) throws Exception {
+		String iniparam = request.getParameter("iniparam");
+		List<DataQuality> data30DataQualityList = highFDService.select_DataQualityList(iniparam);
+		JSONArray json = JSONArray.fromObject(data30DataQualityList);
+		return json.toString();
+	}
+	
+	/**
+	 *  删除数据质量记录信息
+	 */
+	@RequestMapping(value = "/news/delete_DataQualityById")
+	@ResponseBody
+	public ModelAndView delete_DataQualityById(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String id = request.getParameter("id");
+		highFDService.deleteDataQualityById(id);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("manager/qualityList");
+		return mav;
+	}
+
+	
 	//*******数据详细信息  跳转  + json*****************************************
 	//获得新闻详细信息
 	@RequestMapping(value = "/news/data30_DataQualityDetailToJsp")

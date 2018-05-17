@@ -1,6 +1,12 @@
 package com.highfd.service;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.PreparedStatementCallback;
+
 import com.highfd.bean.DataQuality;
 import com.highfd.bean.EarthQuake;
 import com.highfd.bean.NewsInfo;
@@ -53,5 +59,16 @@ public interface HighFDService {
 	 * 删除新闻
 	 */
 	public void deleteNewsInfo(final int id) throws Exception;
+	
+
+	/**
+	 * 删除数据质量记录信息
+	 */
+	public void deleteDataQualityById(final String id) throws Exception;
+	
+	/**
+	 * 模糊查询  每月数据整理状态
+	 */
+	public List<DataQuality> select_DataQualityList (String iniparam) throws Exception;
 	
 }

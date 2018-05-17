@@ -1,10 +1,14 @@
 package com.highfd.service.impl;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.PreparedStatementCallback;
 import org.springframework.stereotype.Service;
 
 import com.highfd.bean.DataQuality;
@@ -140,8 +144,19 @@ public class HighFDServiceImpl implements HighFDService {
 		dao.deleteNewsInfo(id);
 	}
 
-	
+
+	/**
+	 * 删除数据质量记录信息
+	 */
+	public void deleteDataQualityById(final String id) throws Exception {
+		dao.deleteDataQualityById(id);
+	}
 	
 
-
+	/**
+	 * 模糊查询  每月数据整理状态
+	 */
+	public List<DataQuality> select_DataQualityList (String iniparam) throws Exception {
+		return dao.select_DataQualityList(iniparam);
+	}
 }

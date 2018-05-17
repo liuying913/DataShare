@@ -294,4 +294,13 @@ public class managerController {
 		mav.setViewName("manager/earthQuakeSupplyData");
 		return mav;
 	}
+	
+	//数据动态管理
+	@RequestMapping(value = "qualityDataToJsp")
+	@ResponseBody
+	public ModelAndView qualtyDataToJsp(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("manager/qualityList");
+		return mav;
+	}
 }

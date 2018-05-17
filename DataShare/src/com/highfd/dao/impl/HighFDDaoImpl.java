@@ -303,9 +303,50 @@ public class HighFDDaoImpl implements HighFDDao{
 		return eventInfoList;
 	}
 	
-
+	/**
+	 * 模糊查询  每月数据整理状态
+	 */
+	public List<DataQuality> select_DataQualityList (String iniparam) throws Exception {
+		StringBuffer sql = new StringBuffer();
+		sql.append("select t.id,t.title,t.content,t.time,t.year,t.month,t.type,t.earthquakeid from DATAQUALITY_INFO t where 1=1 ");
+		if(null!=iniparam && !"".equals(iniparam)){
+			sql.append(" and t.title like '%"+iniparam+"%' ");
+		}
+		sql.append(" order by t.time desc");
+		
+		@SuppressWarnings({ "unchecked"})
+		List<DataQuality> eventInfoList = jdbcTemplate.query(sql.toString(), new RowMapper(){
+		    public Object mapRow(ResultSet rs, int arg1) throws SQLException {
+		    	DataQuality info = new DataQuality();
+		    	info.setId(rs.getString("id"));
+		    	info.setTitle(rs.getString("title"));
+		    	info.setContent(rs.getString("content"));
+		    	info.setTime(TimeUtils.TimestampToString(rs.getTimestamp("time")).substring(0, 10));
+		    	info.setYear(rs.getString("year"));
+		    	info.setMonth(rs.getString("month"));
+		    	info.setType(rs.getString("type"));
+		    	info.setEarthQuakeId(rs.getString("earthquakeid"));
+				return info;
+		   }
+		});
+		return eventInfoList;
+	}
 	
-
+	/**
+	 * 删除数据质量记录信息
+	 */
+	@SuppressWarnings("unchecked")
+	public void deleteDataQualityById(final String id) throws Exception {
+		String sql = "delete DATAQUALITY_INFO where id=?";
+		jdbcTemplate.execute(sql, new PreparedStatementCallback() {
+			public Object doInPreparedStatement(PreparedStatement pstmt)
+					throws SQLException, DataAccessException {
+				pstmt.setString(1, id);
+				pstmt.execute();
+				return null;
+			}
+		});
+	}
 
 
 }

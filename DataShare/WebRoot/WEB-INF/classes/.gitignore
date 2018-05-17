@@ -1,3 +1,9 @@
+/META-INF/
 /com/
+/jdbc.properties
 /listener/
+/log4j.xml
 /org/
+/MysqlToOracle.class
+/SiteInfos.class
+/SqlServer2005Test.class

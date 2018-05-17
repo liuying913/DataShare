@@ -192,6 +192,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li class="left14"><a href="javascript:;" rel="/DataShare/baseSiteInfoListToJsp.action?applyTitle=共享站管理&siteType=3">共享站管理</a></li>
 								<li class="left16"><a href="javascript:;" rel="/DataShare/doc/softListToJsp.action?applyTitle=软件管理">软件管理</a></li>
 								<li class="left17"><a href="javascript:;" rel="/DataShare/manager/boardListToJsp.action?applyTitle=留言管理">留言管理</a></li>
+								<li class="left11"><a href="javascript:;" rel="/DataShare/manager/qualityDataToJsp.action?applyTitle=数据动态管理">数据动态管理</a></li>
                             </ul>
                             
                             <li  class="add3"><a href="javascript:;">数据整理</a></li>
