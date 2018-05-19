@@ -127,11 +127,11 @@ $(document).ready(function() {
 											{start: 0, end: 10, label: '空缺', color: '#008B00'},
 											{start: 250, end: 300, label: '完整', color: '#7FFF00'},
 								            {start: 10, end: 250, label: '缺失', color: '#e53341'},
-								            {start: -1, end: -1, label: '地震位置', color: 'red'}
+								            {start: -1, end: -1, label: '地震位置', color: 'black'}
 						                    //{start: 0, end: 0, label: '5条内', color: 'black'}//,
 						                    //{end: 0, label: '无记录'}
 						                ],
-								        color: ['red','#ff9900','#ffff00']
+								        color: ['black','#ff9900','#ffff00']
 								    },
 								    
 								    roamController: {
