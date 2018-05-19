@@ -397,15 +397,26 @@ $(document).ready(function() {
 		}).done(function(data) {
 			gparent.find('.tr-01').nextAll().remove();
 			var dnt=data[nianfen][yearDay];
-			for(var i = 0; i < dnt.length; i++) {
+			if(null!=dnt && dnt.length>0){
+				for(var i = 0; i < dnt.length; i++) {
+					var box = $("<tr>").appendTo(gparent.find(".table"));
+					$("<td>").text(dnt[i]['siteNumber']).appendTo(box);
+					$("<td>").text(dnt[i]['siteName']).appendTo(box);
+					$("<td>").text(dnt[i]['fileName']).appendTo(box);
+					$("<td>").text(dnt[i]['fileSize']).appendTo(box);
+					$("<td>").text(dnt[i]['ephemNumber']).appendTo(box);//历元数量
+					$("<td>").text(dnt[i]['zoneName']).appendTo(box);
+					$("<td>").text(dnt[i]['fileComp']).appendTo(box);
+				}
+			}else{
 				var box = $("<tr>").appendTo(gparent.find(".table"));
-				$("<td>").text(dnt[i]['siteNumber']).appendTo(box);
-				$("<td>").text(dnt[i]['siteName']).appendTo(box);
-				$("<td>").text(dnt[i]['fileName']).appendTo(box);
-				$("<td>").text(dnt[i]['fileSize']).appendTo(box);
-				$("<td>").text(dnt[i]['ephemNumber']).appendTo(box);//历元数量
-				$("<td>").text(dnt[i]['zoneName']).appendTo(box);
-				$("<td>").text(dnt[i]['fileComp']).appendTo(box);
+				$("<td>").text("").appendTo(box);
+				$("<td>").text("").appendTo(box);
+				$("<td>").text("").appendTo(box);
+				$("<td>").text("无数据").appendTo(box);
+				$("<td>").text("").appendTo(box);
+				$("<td>").text("").appendTo(box);
+				$("<td>").text("").appendTo(box);
 			}
 
 			//绑定表格隔行变色事件
@@ -426,7 +437,6 @@ $(document).ready(function() {
 			$('#iframe', parent.document).css("height",document.body.scrollHeight);
 		});
 	}
-	
 	
 	//文件点击事件
 	$('body').delegate('.ul-img .angDown', 'click', function() {

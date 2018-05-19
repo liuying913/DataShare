@@ -1,4 +1,4 @@
-﻿//=====分页
+﻿﻿//=====分页
 function pages(urls) {
 	$.ajax({
 		url: urls,

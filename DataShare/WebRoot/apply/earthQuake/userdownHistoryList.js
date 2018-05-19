@@ -43,8 +43,7 @@ function page(data) {
 	$("#zongyeshu")[0].innerHTML = pageCount; // 总共页数
 	$("#zongshuju")[0].innerHTML = recordCount; // 一共有多少条数据
 	// 默认显示的五个界面
-	$("<a href='#' onclick='yeshu(this)';>").text(currentPage).appendTo(
-			".everypages");
+	$("<a href='#' onclick='yeshu(this)';>").text(currentPage).appendTo(".everypages");
 	// 下拉列表
 	if (pageFlag == "true") {
 		for ( var i = 1; i <= pageCount; i++) {
@@ -53,7 +52,6 @@ function page(data) {
 		}
 		pageFlag = "false";
 	}
-	//$(".everypages").children()[0].style.color = "red";
 }
 var flag = 0;
 function shua(data) {
@@ -64,29 +62,31 @@ function shua(data) {
 	}
 	str = "";
 	for ( var key = 1; key <= data.length; key++) {
-		// if( key>(currentPage-1)*pageSize && key<= currentPage*pageSize){
-		if (key % 2 != 0) {
-			str = str + "<tr class='even'>" + "	    <td>"
-					+ data[key - 1].year + "</td>" + "	    <td>"
-					+ data[key - 1].name + "</td>" + "	    <td>"
-					+ data[key - 1].apply_person
-					+ "</td>" + "	    <td>" + data[key - 1].apply_unit
-					+ "</td>" + "	    <td>" + data[key - 1].filePath
-					+ "</td>" + "	    <td>" + data[key - 1].fileName
-					+ "</td>" + "	    <td>" + data[key - 1].downTimeStr + "</td>"
-					+ "    </tr>"
-		} else {
-			str = str + "<tr>" + "	    <td>"
-					+ data[key - 1].year + "</td>" + "	    <td>"
-					+ data[key - 1].name + "</td>" + "	    <td>"
-					+ data[key - 1].apply_person
-					+ "</td>" + "	    <td>" + data[key - 1].apply_unit
-					+ "</td>" + "	    <td>" + data[key - 1].filePath
-					+ "</td>" + "	    <td>" + data[key - 1].fileName
-					+ "</td>" + "	    <td>" + data[key - 1].downTimeStr + "</td>"
-					+ "    </tr>"
+		var paths = data[key - 1].filePath;
+		if(paths.length>25){
+			paths="..."+paths.substring(paths.length-20,paths.length);
 		}
-		// }
+		if (key % 2 != 0) {
+			str = str + "<tr class='even'>" 
+					+ "	    <td>"+ data[key - 1].year + "</td>" 
+					+ "	    <td>"+ data[key - 1].name + "</td>" 
+					+ "	    <td>"+ data[key - 1].apply_person+ "</td>" 
+					+ "	    <td>" + data[key - 1].apply_unit+ "</td>" 
+					+ "	    <td>" + paths+ "</td>" 
+					+ "	    <td>" + data[key - 1].fileName+ "</td>" 
+					+ "	    <td>" + data[key - 1].downTimeStr + "</td>"
+					+ "    </tr>";
+		} else {
+			str = str + "<tr>" 
+					+ "	    <td>"+ data[key - 1].year + "</td>" 
+					+ "	    <td>"+ data[key - 1].name + "</td>" 
+					+ "	    <td>"+ data[key - 1].apply_person+ "</td>" 
+					+ "	    <td>" + data[key - 1].apply_unit+ "</td>" 
+					+ "	    <td>" + paths+ "</td>" 
+					+ "	    <td>" + data[key - 1].fileName+ "</td>" 
+					+ "	    <td>" + data[key - 1].downTimeStr + "</td>"
+					+ "    </tr>";
+		}
 	}
 	$("#tbody").html(str);
 	$('#iframe', parent.document).css("height", $("#iframeheight").height());

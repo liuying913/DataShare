@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	                	<h3>审核不通过，不通过原因：</h3>
 	                    <div class="tips">您的项目不符合条件</div>
 	                </div>
-	                </br>
+	                <br>
 	                <div class="warp-button">
 						 <button type="button" id="back" class="shengfen-button"><!--<img src="/DataShare/img/s1.png"/>-->上一步</button>
 					</div>
