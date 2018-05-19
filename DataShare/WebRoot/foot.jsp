@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+
+
 		<div class="footerout">
 			<div class="footer1">
 				<div class="foot_left" style="text-align: center;">
