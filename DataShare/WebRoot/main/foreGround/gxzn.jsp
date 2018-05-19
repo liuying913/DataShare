@@ -42,7 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div class="header-nav"><a href="/DataShare/index.action?id=1">主页></a><a href="/DataShare/index.action?id=6">共享指南></a><a href="/DataShare/index.action?id=6" class="onactive">使用说明</a></div>
             </div>
             <div class="CenterP-right-content">
-              GNSS数据资源共享与信息发布平台共享指南
+              GNSS数据资源共享与信息发布平台使用说明
             </div>
             <img style="margin-top: 20px; width: 645px;" src="/DataShare/img/zxjj-pic.png" />
         </div>

@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="warp clearfix">
 				<div class="toper_l">
 					<div class="twel fl">
-                    	<div class="tinfo fl">欢迎您，<a href="/DataShare/login.action?id=4">${sessionScope.userInfo.userName}!&nbsp;<img style="width:20px;width:20px;border-radius:50%;" src="${sessionScope.userInfo.imgPath}"/></a>&nbsp;&nbsp;<span id="time"></span></div>
+                    	<div class="tinfo fl">欢迎您，<a href="/DataShare/login.action?id=4">${sessionScope.userInfo.userCName}!&nbsp;<img style="width:20px;width:20px;border-radius:50%;" src="${sessionScope.userInfo.imgPath}"/></a>&nbsp;&nbsp;<span id="time"></span></div>
                         <div class="ttb fl">
                         	<a href="javascript:;" class="nownews">
                                 <i class="tico tico_news"></i><i class="tnews"></i>

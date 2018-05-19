@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="warp clearfix">
 				<div class="toper_l">
 					<div class="twel fl">
-                    	<div class="tinfo fl">欢迎您，<a href="/DataShare/login.action?id=4">${sessionScope.userInfo.userName}!&nbsp;<img style="width:20px;width:20px;border-radius:50%;" src="${sessionScope.userInfo.imgPath}"/></a>&nbsp;&nbsp;<span id="time"></span></div>
+                    	<div class="tinfo fl">欢迎您，<a href="/DataShare/login.action?id=4">${sessionScope.userInfo.userCName}!&nbsp;<img style="width:20px;width:20px;border-radius:50%;" src="${sessionScope.userInfo.imgPath}"/></a>&nbsp;&nbsp;<span id="time"></span></div>
                         <div class="ttb fl">
                         	<a href="javascript:;" class="nownews">
                                 <i class="tico tico_news"></i><i class="tnews"></i>
@@ -192,7 +192,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li class="left14"><a href="javascript:;" rel="/DataShare/baseSiteInfoListToJsp.action?applyTitle=共享站管理&siteType=3">共享站管理</a></li>
 								<li class="left16"><a href="javascript:;" rel="/DataShare/doc/softListToJsp.action?applyTitle=软件管理">软件管理</a></li>
 								<li class="left17"><a href="javascript:;" rel="/DataShare/manager/boardListToJsp.action?applyTitle=留言管理">留言管理</a></li>
-								<li class="left11"><a href="javascript:;" rel="/DataShare/manager/qualityDataToJsp.action?applyTitle=数据动态管理">数据动态管理</a></li>
                             </ul>
                             
                             <li  class="add3"><a href="javascript:;">数据整理</a></li>

@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="warp clearfix">
 				<div class="toper_l">
 					<div class="twel fl">
-                    	<div class="tinfo fl">欢迎您，<a href="/DataShare/login.action?id=4">${sessionScope.userInfo.userName}!&nbsp;<img style="width:20px;width:20px;border-radius:50%;" src="${sessionScope.userInfo.imgPath}"/></a>&nbsp;&nbsp;<span id="time"></span></div>
+                    	<div class="tinfo fl">欢迎您，<a href="/DataShare/login.action?id=4">${sessionScope.userInfo.userCName}!&nbsp;<img style="width:20px;width:20px;border-radius:50%;" src="${sessionScope.userInfo.imgPath}"/></a>&nbsp;&nbsp;<span id="time"></span></div>
                         <div class="ttb fl">
                         	<a href="javascript:;" class="nownews">
                                 <i class="tico tico_news"></i><i class="tnews"></i>
@@ -184,14 +184,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li><a href="javascript:;" rel="/DataShare/showData/s30sMoreYearToJsp.action?applyTitle=多站年度数据目录"   >多站年度数据目录</a></li>
 								<li><a href="javascript:;" rel="/DataShare/showData/s30sOneMonthToJsp.action?applyTitle=单站月度数据目录"  >单站月度数据目录</a></li>
 								<li><a href="javascript:;" rel="/DataShare/showData/s30sOneYearToJsp.action?applyTitle=单站年度数据目录"   >单站年度数据目录</a></li>
-								<li><a href="javascript:;" rel="/DataShare/showData/s30sDayToJsp.action?applyTitle=单站日度数据目录">单站日度数据目录</a></li>
+								<li><a href="javascript:;" rel="/DataShare/showData/s30sDayToJsp.action?applyTitle=多站日度数据目录">多站日度数据目录</a></li>
 								<li><a href="javascript:;" rel="/DataShare/showData/show30SToJsp.action?applyTitle=数据文件属性"  >数据文件属性</a></li>
 							</ul>
 							<li class="add3"><a href="javascript:;">陆态流动观测数据</a></li>
 							<ul class="subnav dataShare2">
 							    <li><a href="javascript:;" rel="/DataShare/showData/flowMoreYearToJsp.action?applyTitle=多站年度数据目录">多站年度数据目录</a></li>
 								<li><a href="javascript:;" rel="/DataShare/showData/flowOneYearToJsp.action?applyTitle=单站年度数据目录">单站年度数据目录</a></li>
-								<li><a href="javascript:;" rel="/DataShare/showData/flowDayToJsp.action?applyTitle=单站日度数据目录">单站日度数据目录</a></li>
+								<li><a href="javascript:;" rel="/DataShare/showData/flowDayToJsp.action?applyTitle=多站日度数据目录">多站日度数据目录</a></li>
 								<li><a href="javascript:;" rel="/DataShare/showData/showFlowToJsp.action?applyTitle=数据文件属性"  >数据文件属性</a></li>
 								<!--<li><a href="javascript:;" rel="/DataShare/showData/errorBuildIng.action?applyTitle=未处理申请">流动GNSS数据事件列表</a></li>
 							--></ul>
@@ -201,7 +201,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li><a href="javascript:;" rel="/DataShare/showData/shareMoreYearToJsp.action?applyTitle=年度数据目录">年度数据目录</a></li>
 								<li><a href="javascript:;" rel="/DataShare/showData/shareOneMonthToJsp.action?applyTitle=单站月度数据目录">单站月度数据目录</a></li>
 								<li><a href="javascript:;" rel="/DataShare/showData/shareOneYearToJsp.action?applyTitle=单站年度数据目录">单站年度数据目录</a></li>
-								<li><a href="javascript:;" rel="/DataShare/showData/shareDayToJsp.action?applyTitle=单站日度数据目录">单站日度数据目录</a></li>
+								<li><a href="javascript:;" rel="/DataShare/showData/shareDayToJsp.action?applyTitle=多站日度数据目录">多站日度数据目录</a></li>
 								<li><a href="javascript:;" rel="/DataShare/showData/showShareToJsp.action?applyTitle=数据文件属性"  >数据文件属性</a></li>
 						   </ul>
 						   <li class="add2"><a href="javascript:;">陆态地震应急数据</a></li>
