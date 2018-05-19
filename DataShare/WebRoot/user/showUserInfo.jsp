@@ -230,6 +230,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     <script>
 		var userId = $("#userId").val();
+		
+		$("#oldUserPwd").val("");
 		var perviewV = new Date().getTime();
 		$.ajaxSetup({ cache: false });//全局禁用缓存
     	$(document).ready(function(){

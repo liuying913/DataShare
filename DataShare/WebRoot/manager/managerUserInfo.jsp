@@ -206,13 +206,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								   <ul  style="margin-left:270px;">
 									   <li>
 										   <span><b class="requireFlag">*</b>新密码 ：</span>
-										   <label><input id="newUserPwd" name="newUserPwd" type="password" value="" class="input01 require" err="请填写新密码" style="-webkit-box-shadow: 0 0 0px 1000px white inset !important;"></label>
+										   <label><input id="newUserPwd" name="newUserPwd" type="password"  disableautocomplete autocomplete="off" value="" class="input01 require" err="请填写新密码" style="-webkit-box-shadow: 0 0 0px 1000px white inset !important;"></label>
 										   <div  class="sucuState"  style="display:none;"><p class="tishi" style="text-indent: 0px;"><img src="/DataShare/img/pcgzs/success.png"></p></div>
 										   <div id="result_Name" class="errState" style="display:none;"><p class="tishi" style="color: #f73e4c"><img src="/DataShare/img/pcgzs/error.png">请填写新密码</p></div>
 									   </li>
 									   <li>
 										   <span><b class="requireFlag">*</b>重复密码 ：</span>
-										   <label><input id="newUserPwd2" name="newUserPwd2" type="password" value="" class="input01 require" err="两次密码不一致" style="-webkit-box-shadow: 0 0 0px 1000px white inset !important;"></label>
+										   <label><input id="newUserPwd2" name="newUserPwd2" type="password"  disableautocomplete autocomplete="off" value="" class="input01 require" err="两次密码不一致" style="-webkit-box-shadow: 0 0 0 1000px white inset !important;"></label>
 										   <div  class="sucuState"  style="display:none;"><p class="tishi" style="text-indent: 0px;"><img src="/DataShare/img/pcgzs/success.png"></p></div>
 										   <div id="result_Name" class="errState" style="display:none;"><p class="tishi" style="color: #f73e4c"><img src="/DataShare/img/pcgzs/error.png">两次密码不一致</p></div>
 									   </li>
@@ -235,9 +235,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        </ul>
     <script>
 		var userId = $("#userId").val();
+		$("#newUserPwd2").val("");
 		var perviewV = new Date().getTime();
 		$.ajaxSetup({ cache: false });//全局禁用缓存
     	$(document).ready(function(){
+    		$("#newUserPwd2").val("");
     		var url=window.location.href;
 			$(".base-info").addClass("base-info-back");
 			$(".infoShow .input01").attr("disabled","disabled");

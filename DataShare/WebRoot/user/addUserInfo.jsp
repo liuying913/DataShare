@@ -298,10 +298,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		$("#userUnit").blur(function(){
              var apply_Person = $("#userUnit").val();
              var checkObj = $("#userUnit").parent();
-             if(!checkLength(apply_Person)){
+             if(!checkLengthParam(apply_Person,2,20)){
                  checkObj.siblings(".errState").show();
                  checkObj.siblings(".sucuState").hide();
-                 checkObj.siblings(".errState").find(".tishi").html("<img src='/DataShare/img/pcgzs/error.png'>字符长度为2到8个字节");
+                 checkObj.siblings(".errState").find(".tishi").html("<img src='/DataShare/img/pcgzs/error.png'>字符长度为2到2个字节");
                  flag_3 = false;
                  return;
             }else{

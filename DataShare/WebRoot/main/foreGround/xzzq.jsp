@@ -36,9 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="newslist-all clearfix">
                 <ul class="newlist myList"></ul>
                 <ul class="myList" style="margin-left: 60px;">
-                    <li><a href="" target="_blank">天宝接收机使用说明</a><span></span></li>
-                    <li><a href="" target="_blank">压缩软件使用说明</a><span></span></li>
-                    <li><a href="" target="_blank">重力仪使用说明</a><span></span></li>
+                    <li><a href="" target="_blank">示例说明</a><span></span></li>
                     
                 </ul>
             </div>

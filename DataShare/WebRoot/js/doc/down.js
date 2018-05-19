@@ -1,4 +1,4 @@
-﻿﻿//=====分页
+﻿//=====分页
 function pages(urls) {
 	$.ajax({
 		url: urls,
@@ -59,7 +59,7 @@ function shua(){
 	
     for(var i=numb;i<thisNum;i++){
         if( i<data.length){
-           var hrefs = '/DataShare/downRuanJian.action?id='+data[i]['docId'];
+           var hrefs = '/DataShare/downRuanJian.action?storeName='+data[i]['docUrl'];
            var box = $("<li>").appendTo(".newlist");
 
            $("<a href="+hrefs+">"+data[i]['docName']+"</a>").appendTo(box);

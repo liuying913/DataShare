@@ -48,25 +48,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         	<span>所属地区</span>
                             <label><input name="userPhone" type="text" value="" class="input01 require" ></label>
                         </li>
+                        
 						<li>
-                        	<span>所属部委</span>
-                            <label><input name="userEmail" type="text" value="" class="input01 require" ></label>
-                        </li>
-						
-						 <li>
-                        	<span>承建单位</span>
-                            <label><input name="regDateStr" type="text" value="" class="input01 require" err="请填写联系电话"></label>
-                        </li>
-						<li>
-                        	<span>工程类别</span>
-                            <label><input name="userTypeStr" type="text" value="" class="input01 require" err="请填写邮箱"></label>
-                        </li>
-						 <li>
-                        	<span>原台站编号</span>
-                            <label><input name="regDateStr" type="text" value="" class="input01 require" err="请填写联系电话"></label>
-                        </li>
-						
-						 <li>
                         	<span>排序</span>
                             <label><input name="regDateStr" type="text" value="" class="input01 require" err="请填写联系电话"></label>
                         </li>

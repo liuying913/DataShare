@@ -29,7 +29,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   				<input type="button" value="搜索" class="seabtn">
   				<input type="button" value="导出" id="exportUserHistoryExcel" style=" width:110px;height:34px;float:left;left:102%;position:absolute;border:none;cursor:pointer; background-color:#306ab5;color:#fff;">
   			</div>
-  			<br>
             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table01">
               <tr>
                 <th style="white-space: nowrap;">文件名称</th>

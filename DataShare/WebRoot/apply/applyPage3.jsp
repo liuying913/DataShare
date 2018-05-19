@@ -93,8 +93,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<div class="uploadContainer">
 														<input type='text'  id='pathUpload'  placeholder='请选择审批表上传' >
 														<input id="fileImage" type="file" size="30"  name="file1" multiple />
-														<button type="button" class="chooseFile" style="position: relative;">选择</button> 
-														<input id="chooseFile" class="chooseFile-1" type="file" size="30"  name="file1" value="选择" multiple style="width: 10%;height: 100%;z-index: 99999999999; opacity: 0;position: absolute;" />
+														<!-- <button type="button" class="chooseFile" style="position: relative;">选择</button>  -->
+														<!-- <input id="chooseFile" class="chooseFile-1" type="file" size="30"  name="file1" value="选择" multiple style="width: 10%;height: 100%;z-index: 99999999999; opacity: 0;position: absolute;" /> -->
 													</div>
 													<input type="hidden" name="alais" />
 
