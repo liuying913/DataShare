@@ -273,6 +273,16 @@ public class managerController {
 		return mav;
 	}
 	
+	//共享数据  在线整理
+	@RequestMapping(value = "supplyShareDataToJsp")
+	@ResponseBody
+	public ModelAndView supplyShareDataToJsp(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("siteType", 3);
+		mav.setViewName("manager/headShareAnaplerosis");
+		return mav;
+	}
+	
 	//地震应急事件列表（在线整理用的）
 	@RequestMapping(value = "earthQuakeSupplyEventListToJsp")
 	@ResponseBody

@@ -1,15 +1,3 @@
-function jsalert() {
-    var arg = arguments;
-    layer.alert(arg[0], {
-        shade: false
-    },
-    function() {
-        if (typeof arg[1] == 'function') {
-            arg[1]();
-        }
-    });
-
-}
 $(document).ready(function() {
 	
 	var iniStartTime = getMonthOne();
@@ -201,8 +189,6 @@ $(document).ready(function() {
 		if($(this).is(':checked')) {
 			gparent.find('.input-warp01 input').prop('checked',true);
 			getdelCitys(gparent);
-			$('.fanxuan').prop('checked',false);
-			$('.fanxuan').parent().removeClass('on');
 		} else {
 			gparent.find('.input-warp01 input').prop('checked',false);
 			gparent.find(".input-warp02").empty();
@@ -215,13 +201,6 @@ $(document).ready(function() {
 	//绑定反选、
 	$(document).on('change','.fanxuan',function(){
 		var gparent = $(this).parentsUntil('.shop-warp02');
-		$('.fanxuan').prop('checked',true);
-		$('.fanxuan').parent().addClass('on');
-
-		$('.quanxuan').prop('checked',false);
-		$('.quanxuan').parent().removeClass('on');
-
-		
 		gparent.find('.input-warp01 input').each(function(){
 			if($(this).is(':checked')){
 				$(this).prop('checked',false);
@@ -231,20 +210,14 @@ $(document).ready(function() {
 			checkstyle($(this));
 		})
 		getdelCitys(gparent);
-		//isquanxuan($('.input-warp01 .check_style'),$('.quanxuan'));
+		isquanxuan($('.input-warp01 .check_style'),$('.quanxuan'));
 	})
-	
-	
-	
-	
 	
 	//全选2
 	$(document).on('change','.quanxuan2',function(){
 		var gparent = $(this).parentsUntil('.shop-warp02');
 		if($(this).is(':checked')) {
 			gparent.find('.input-warp02 input').prop('checked',true);
-			$('.fanxuan2').prop('checked',false);
-			$('.fanxuan2').parent().removeClass('on');
 		} else {
 			gparent.find('.input-warp02 input').prop('checked',false);
 		}
@@ -255,14 +228,6 @@ $(document).ready(function() {
 	//反选2
 	$(document).on('change','.fanxuan2',function(){
 		var gparent = $(this).parentsUntil('.shop-warp02');
-		$('.fanxuan2').prop('checked',true);
-		$('.fanxuan2').parent().addClass('on');
-		$('.quanxuan2').parent().removeClass('on');
-		if($(this).is(':checked')) {
-			$('.quanxuan2').prop('checked',false);
-			$('.quanxuan2').parent().removeClass('on');
-		}
-		
 		gparent.find('.input-warp02 input').each(function(){
 			if($(this).is(':checked')){
 				$(this).prop('checked',false);
@@ -271,142 +236,64 @@ $(document).ready(function() {
 			}
 			checkstyle($(this));
 		})
-		//isquanxuan($('.input-warp02 .check_style'),$('.quanxuan2'));
+		isquanxuan($('.input-warp02 .check_style'),$('.quanxuan2'));
 	})
 
 	
 	//====提交查询
 	$('.shengfen-button').click(function() {
-		again();
-		function again() {
-			
-			var This = $('.shengfen-button').index($(this));
 		
-			var kaishi = $('.kaishi').eq(This).val(); //开始时间
-			var jieshu = $('.jieshu').eq(This).val(); //结束时间
-			
-			getYearFlagOrNo(kaishi,jieshu);//判定是否跨年
-			
-			$('.warp02-bottom').eq(This).slideDown(); //提交--显示
-			$('.tr-01').eq(This).nextAll().remove();
-			$('.ul-img').eq(This).html('');
-			setTimeout('parent.$("#iframe").css("height",$("#iframeheight").height());',300);
-			var buwei = [];//部委
-			var shengfen = []; //省份
-			var taizhang = []; //台站
-			
-			//部委
-			for(var i = 0; i < $(".input-warp00").eq(This).find('input:checked').length; i++) {buwei[i] = $(".input-warp00").eq(This).find('input:checked').eq(i).val();}
-			//省份
-			for(var i = 0; i < $(".input-warp01").eq(This).find('input:checked').length; i++) {shengfen[i] = $(".input-warp01").eq(This).find('input:checked').eq(i).val();}
-			//台站
-			for(var i = 0; i < $(".input-warp02").eq(This).find('input:checked').length; i++) {taizhang[i] = $(".input-warp02").eq(This).find('input:checked').eq(i).val();}	
-
-			var params = "kaishi="+kaishi+"&jieshu="+jieshu+"&buwei="+buwei  +"&shengfen="+shengfen+"&taizhang="+taizhang+"&Datetype="+siteType+"&applyOrShow=apply";
-			$.ajax({
-				url: "/DataShare/showData/getYearDayFileInfoList.action?"+params,
-				type: "get",
-				data: "json",
-				beforeSend:function() {
-					$('.zbg', window.parent.document).show();
-					$('.myload', window.parent.document).show();
-				},
-				complete:function(){
-					$('.zbg', window.parent.document).hide();
-					$('.myload', window.parent.document).hide();
-				}
-			}).done(function(data) {
-
-				for(var p in data){
-					var td = $("<li>").appendTo($('.ul-img').eq(This));
-					td.html("<div class='angDown'><span class='TText'>" + p + "</span><i class='icon-angle-down'></i></div>")
-					var div = $("<ul>").addClass('bottom-left-ul').appendTo($('.ul-img').eq(This));
-					var uhtml='';
-					var iniYearDayFlag = "true";//判断是否第一次
-					var yearDayFirst = "001";
-					for(var d in data[p]){
-						d = d.substring(1,d.length);
-						if(iniYearDayFlag.indexOf("true")>-1){
-							yearDayFirst = d;
-							iniYearDayFlag="false";
-						}
-						uhtml+='<li>'+d+'<i class="icon-angle-right"></i></li>';
-					}
-					div.html(uhtml);
-					
-					//右侧  默认显示第一天的表格
-					fillData(This,p,yearDayFirst,kaishi,jieshu,siteType);
-				}
-				setTimeout('parent.$("#iframe").css("height",$("#iframeheight").height());',300);
-			})
-		}
-	})
-	
-	
-	function fillData(This,nianfen,textx,kaishi,jieshu,Datetype){
-		var gparent = $(".shop-warp02").eq(This);
-		gparent.find('.bottom-left-ul li').removeClass('on');
-		$(this).addClass('on');
-		shuci++;
+		var This = $('.shengfen-button').index($(this));
 		
+		var kaishi = $('.kaishi').eq(This).val(); //开始时间
+		var jieshu = $('.jieshu').eq(This).val(); //结束时间
+		
+		getYearFlagOrNo(kaishi,jieshu);//判定是否跨年
+		
+		$('.warp02-bottom').eq(This).slideDown(); //提交--显示
+		$('.tr-01').eq(This).nextAll().remove();
+		$('.ul-img').eq(This).html('');
+		setTimeout('parent.$("#iframe").css("height",$("#iframeheight").height());',300);
+		var dongwei = ""; //东纬度
+		var xiwei = ""; //西纬度
+		var dongjin = ""; //东经度
+		var xijin = ""; //西经度
+		
+		var buwei = [];//部委
 		var shengfen = []; //省份
 		var taizhang = []; //台站
-		for(var i = 0; i < $(".input-warp01").find('input:checked').length; i++) {
-			shengfen[i] = $(".input-warp01").find('input:checked').eq(i).val();
-		}
-		for(var i = 0; i < $(".input-warp02").find('input:checked').length; i++) {
-			taizhang[i] = $(".input-warp02").find('input:checked').eq(i).val();
-		}
-		var params = "kaishi="+kaishi+"&jieshu="+jieshu+"&shengfen="+shengfen+"&taizhang="+taizhang+"&fileYear="+nianfen+"&fileDayYear="+textx+"&Datetype="+Datetype+"&applyOrShow=apply";
-		params = encodeURI(params);
-		//获取表格json数据
+		
+		//部委
+		for(var i = 0; i < $(".input-warp00").eq(This).find('input:checked').length; i++) {buwei[i] = $(".input-warp00").eq(This).find('input:checked').eq(i).val();}
+		//省份
+		for(var i = 0; i < $(".input-warp01").eq(This).find('input:checked').length; i++) {shengfen[i] = $(".input-warp01").eq(This).find('input:checked').eq(i).val();}
+		//台站
+		for(var i = 0; i < $(".input-warp02").eq(This).find('input:checked').length; i++) {taizhang[i] = $(".input-warp02").eq(This).find('input:checked').eq(i).val();}	
+
+		var params = "startTime="+kaishi+"&endTime="+jieshu+"&departmentStr="+buwei  +"&zoneStr="+shengfen+"&siteNumberStr="+taizhang+"&Datetype="+siteType+"&applyOrShow=apply";
 		$.ajax({
-			url: "/DataShare/getFileInfoList.action?"+params,
+			url: "/DataShare/shareDataReduction/supplyShareData.action?"+params,
 			type: "get",
-			data: "json",
-			beforeSend:function() {
-				//$(".myload").show();
-				$('.zbg', window.parent.document).show();
-				$('.myload', window.parent.document).show();
-			},
-			complete:function(){
-				$('.zbg', window.parent.document).hide();
-				$('.myload', window.parent.document).hide();
-			}
+			data: "json"
 		}).done(function(data) {
-			gparent.find('.tr-01').nextAll().remove();
-			var dnt=data[nianfen][textx];
-			for(var i = 0; i < dnt.length; i++) {
-				var box = $("<tr>").appendTo(gparent.find(".table"));
-				$("<td>").text(dnt[i]['siteNumber']).appendTo(box);
-				$("<td>").text(dnt[i]['siteName']).appendTo(box);
-				$("<td>").text(dnt[i]['fileName']).appendTo(box);
-				$("<td>").text(dnt[i]['fileSize']).appendTo(box);
-				/*$("<td>").text(dnt[i]['ephemNumber']).appendTo(box);//历元数量
-				$("<td>").text(dnt[i]['mp1']).appendTo(box);
-				$("<td>").text(dnt[i]['mp2']).appendTo(box);*/
-				$("<td>").text(dnt[i]['fileComp']).appendTo(box);
+			var dataApplyFlag = data['date'][0]['code'];
+			if(dataApplyFlag=='true'){//可以执行
+				init("开始执行",0);
+				$(".confirm",window.parent.document).click( function(){
+					
+                })
+			}else{
+				init("有未完成的任务，请稍后再试！",2);
+				$(".confirm",window.parent.document).click( function(){
+					
+                })
 			}
+			//"{\"date\":[{\"code\":\""+supplyDataFlag+"\",\"msg\":\"用户名或密码错误！\"}]}";
+			//setTimeout('parent.$("#iframe").css("height",$("#iframeheight").height());',300);
+		})
+	})
+	
 
-			//绑定表格隔行变色事件
-			$('.warp02-bottom-right table tr:even').css('background', '#eeeeee')
-			$('.warp02-bottom-right table tr').eq(0).css('background', '#306bb5')
-
-			//绑定表格全选事件
-			if(shuci == 1) {
-				$('.input-01').click(function() {
-					if($(this).prop("checked") == false) {
-						$(".table input:checkbox").prop("checked", false);
-					} else {
-						$(".table input:checkbox").prop("checked", true);
-					}
-				});
-			}
-			//setTimeout('parent.$("#iframe").css("height",$("#iframeheight").height());',600);	
-			$('#iframe', parent.document).css("height",document.body.scrollHeight);
-
-		});
-	}
 	
 	//=====获取table内容
 	var shuci = 0; //声明定义——禁止双次绑定表格全选事件
@@ -414,72 +301,13 @@ $(document).ready(function() {
 	var nianfen;
 	var textx;
 	var params;
-	$('body').delegate('.bottom-left-ul li', 'click', function() {
-		gparent = $(this).parentsUntil('.shop-warp02');
-		gparent.find('.bottom-left-ul li').removeClass('on');
-		$(this).addClass('on');
 
-		nianfen = parseInt(gparent.find('.angDown').text()); //获取当前年份
-		textx = $(this).text(); //获取当前年积日
-		$('.input-01').prop("checked", false);
-		shuci++;
-		params = getParams()+"&fileYear="+nianfen+"&fileDayYear="+textx+"&Datetype="+siteType+"&applyOrShow=apply";
-		//获取表格json数据
-		$.ajax({
-			url: "/DataShare/getFileInfoList.action?"+params,
-			type: "get",
-			data: "json",
-			beforeSend:function() {
-				//$(".myload").show();
-				$('.zbg', window.parent.document).show();
-				$('.myload', window.parent.document).show();
-			},
-			complete:function(){
-				$('.zbg', window.parent.document).hide();
-				$('.myload', window.parent.document).hide();
-			}
-		}).done(function(data) {
-			gparent.find('.tr-01').nextAll().remove();
-			var dnt=data[nianfen][textx];
-			for(var i = 0; i < dnt.length; i++) {
-				var box = $("<tr>").appendTo(gparent.find(".table"));
-				//var td = $("<td>").appendTo(box);
-				//$("<input>").attr('type', 'checkbox').appendTo(td);
-				//$("<td>").text(dnt[i]['fileYear']).appendTo(box);
-				//$("<td>").text(dnt[i]['fileDayYear']).appendTo(box);
-				$("<td>").text(dnt[i]['siteNumber']).appendTo(box);
-				$("<td>").text(dnt[i]['siteName']).appendTo(box);
-				$("<td>").text(dnt[i]['fileName']).appendTo(box);
-				$("<td>").text(dnt[i]['fileSize']).appendTo(box);
-				/*$("<td>").text(dnt[i]['ephemNumber']).appendTo(box);//历元数量
-				$("<td>").text(dnt[i]['mp1']).appendTo(box);
-				$("<td>").text(dnt[i]['mp2']).appendTo(box);*/
-				$("<td>").text(dnt[i]['fileComp']).appendTo(box);
-			}
-             
-			//绑定表格隔行变色事件
-			$('.warp02-bottom-right table tr:even').addClass('even');
-			//$('.warp02-bottom-right table tr').eq(0).css('background', '#306bb5')
-
-			//绑定表格全选事件
-			if(shuci == 1) {
-				$('.input-01').click(function() {
-					if($(this).prop("checked") == false) {
-						$(".table input:checkbox").prop("checked", false);
-					} else {
-						$(".table input:checkbox").prop("checked", true);
-					}
-				});
-			}
-			setTimeout('parent.$("#iframe").css("height",$("#iframeheight").height());',100);	
-		});
-	});
 		
 	
 	//文件点击事件
 	$('body').delegate('.ul-img .angDown', 'click', function() {
 		$(this).parent().next().toggle();
-	});
+	})
 
 
 	function getParams(){
@@ -504,17 +332,6 @@ $(document).ready(function() {
 		return params;
 	}
 	
-	//导出事件
-	$('#exportDataExcel').click(function() {
-		
-		var kaishi = $('.kaishi').val(); //开始时间
-		var jieshu = $('.jieshu').val(); //结束时间
-		getYearFlagOrNo(kaishi,jieshu);//判定是否跨年
-		
-		var url="/DataShare/excel/exportDataExcel.action?applyOrShow=apply&"+getParams();
-		window.open(url);
-	})
-	
 	function checkstyle(obj){
 		if(obj.is(':checked')){
 			obj.parent().addClass('on');
@@ -524,13 +341,13 @@ $(document).ready(function() {
 	}
 	$(document).on('change','.check_style input',function(){
 		checkstyle($(this));
-	});
+	})
 	$(document).on('change','.input-warp01 input',function(){
 		isquanxuan($('.input-warp01 .check_style'),$('.quanxuan'));
-	});
+	})
 	$(document).on('change','.input-warp02 input',function(){
 		isquanxuan($('.input-warp02 .check_style'),$('.quanxuan2'));
-	});
+	})
 	function isquanxuan(obj,objall){
 		var isall=true;
 		obj.each(function(){
@@ -539,7 +356,7 @@ $(document).ready(function() {
 				return false;
 			}
 		})
-		//objall.prop('checked',isall);
-		//checkstyle(objall);
+		objall.prop('checked',isall);
+		checkstyle(objall);
 	}
 })

@@ -6,6 +6,8 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+
+import com.highfd.controller.Data.share.service.ShareDataReductionService;
 import com.highfd.service.ApplyFileService;
 import com.highfd.service.HighFDService;
 import com.highfd.service.SiteStationService;
@@ -26,6 +28,8 @@ public class Z_DataReductionController {
 	HighFDService highFDService;
 	@Autowired
 	Z_DataReductionService z_DataReductionService;
+	@Autowired
+	ShareDataReductionService shareService;
 
 	/**
 	 * 每天定时任务
@@ -41,6 +45,7 @@ public class Z_DataReductionController {
 		SimpleDateFormat dFormat = new SimpleDateFormat("yyyy-MM-dd");
 		System.out.println("开始执行  **   定时器每天执行："+dFormat.format(dateStrings));
 		z_DataReductionService.data30S(dFormat.format(dateStrings),"");
+		shareService.shareDataReductionMain(dFormat.format(dateStrings),"");
 	}
 	
 	/**
@@ -75,6 +80,7 @@ public class Z_DataReductionController {
 			SimpleDateFormat dFormat = new SimpleDateFormat("yyyy-MM-dd");
 			System.out.println("每月二号 补数据    开始执行："+dFormat.format(dateStrings));
 			z_DataReductionService.data30S(dFormat.format(dateStrings),"");
+			shareService.shareDataReductionMain(dFormat.format(dateStrings),"");
 		}
 		//开始执行 每月的 报告
 		highFDService.insertDataQualityInfo(lastDay);

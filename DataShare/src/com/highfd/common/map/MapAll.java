@@ -62,6 +62,7 @@ public class MapAll {
 	
 	
 	public static String gnss_o = "";//将gnss接收机上转化的o文件 放到ftp文件夹下，进行数据补录
+	public static String Share_o="";
 	public static String fileLogBaseName = "";//在线数据整理 日志路径
 	
 	

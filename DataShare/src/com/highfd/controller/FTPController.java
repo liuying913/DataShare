@@ -81,12 +81,14 @@ public class FTPController {
 			FTP_User = GetXMLPath.getProperties(dbpath,"ftpUserWin");
 			MapAll.configFile = GetXMLPath.getProperties(dbpath,"configFileWin");
 			MapAll.gnss_o = GetXMLPath.getProperties(dbpath,"gnss_oWin");
+			MapAll.Share_o = GetXMLPath.getProperties(dbpath,"Share_oWin");
 			MapAll.fileLogBaseName = GetXMLPath.getProperties(dbpath,"fileLogBaseNameWin");
 		}else{
 			MapAll.FTPLocalPath = GetXMLPath.getProperties(dbpath,"fileSystemPathLinux");
 			FTP_User = GetXMLPath.getProperties(dbpath,"ftpUserLinxu");
 			MapAll.configFile = GetXMLPath.getProperties(dbpath,"configFileLinux");
 			MapAll.gnss_o = GetXMLPath.getProperties(dbpath,"gnss_oLinux");
+			MapAll.Share_o = GetXMLPath.getProperties(dbpath,"Share_oLinux");
 			MapAll.fileLogBaseName = GetXMLPath.getProperties(dbpath,"fileLogBaseNameLinux");
 		}
 		

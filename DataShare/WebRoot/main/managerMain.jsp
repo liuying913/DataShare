@@ -202,6 +202,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                            		<li  class="left10"><a id="earthquakeConfigEdit" href="javascript:;" rel="/DataShare/manager/earthquakeConfigEditToJsp.action?applyTitle=应急数据设置">数据整理设置</a></li>
 								<li class="left15"><a href="javascript:;" rel="/DataShare/manager/greatEventListToJsp.action?applyTitle=站点大事记管理">站点大事记管理</a></li>
 								<li class="left17"><a href="javascript:;" rel="/DataShare/manager/headAnaplerosisToJsp.action?applyTitle=常规数据在线整理">常规数据在线整理</a></li>
+								<li class="left17"><a href="javascript:;" rel="/DataShare/manager/supplyShareDataToJsp.action?applyTitle=共享数据在线整理">共享数据在线整理</a></li>
 								<li class="left17"><a href="javascript:;" rel="/DataShare/manager/earthQuakeSupplyEventListToJsp.action?applyTitle=应急数据在线整理">应急数据在线整理</a></li>
                             </ul>
                         </ul>

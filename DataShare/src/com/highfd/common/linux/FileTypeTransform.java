@@ -403,7 +403,7 @@ public class FileTypeTransform {
 	   return true;
 	}
 	
-	private String fileCompress(String unzipPath,String zipPath){
+	public String fileCompress(String unzipPath,String zipPath){
 		String dPath = unzipPath;
 		if(unzipPath.toLowerCase().endsWith(".z") || unzipPath.toLowerCase().endsWith(".gz") || unzipPath.toLowerCase().endsWith(".zip")){
 			return dPath;

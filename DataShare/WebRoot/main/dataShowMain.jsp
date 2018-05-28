@@ -199,7 +199,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<ul class="subnav dataShare4">
 							    <li><a href="javascript:;" rel="/DataShare/showData/shareMoreMonthToJsp.action?applyTitle=多站月度数据目录">多站月度数据目录</a></li>
 								<li><a href="javascript:;" rel="/DataShare/showData/shareMoreYearToJsp.action?applyTitle=年度数据目录">年度数据目录</a></li>
-								<li><a href="javascript:;" rel="/DataShare/showData/shareOneMonthToJsp.action?applyTitle=单站月度数据目录">单站月度数据目录</a></li>
+								<!--<li><a href="javascript:;" rel="/DataShare/showData/shareOneMonthToJsp.action?applyTitle=单站月度数据目录">单站月度数据目录</a></li>-->
 								<li><a href="javascript:;" rel="/DataShare/showData/shareOneYearToJsp.action?applyTitle=单站年度数据目录">单站年度数据目录</a></li>
 								<li><a href="javascript:;" rel="/DataShare/showData/shareDayToJsp.action?applyTitle=多站日度数据目录">多站日度数据目录</a></li>
 								<li><a href="javascript:;" rel="/DataShare/showData/showShareToJsp.action?applyTitle=数据文件属性"  >数据文件属性</a></li>

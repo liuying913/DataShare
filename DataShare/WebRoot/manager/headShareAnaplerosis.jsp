@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="/DataShare/js/timeCommon/todayTime.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/DataShare/js/jQueryv1.9.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/DataShare/js/common/departmentProvinceSite.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/DataShare/js/manager/headAnaplerosis.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/DataShare/js/manager/headShareAnaplerosis.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="/DataShare/js/common/popup/commonPopup.js"></script>
 </head>
 <body>
@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <input type="hidden" id="applyId" name="applyId" value="${applyId}"/>
   <div id="iframeheight">
         <div class="pbox tspbox">
-        <div class="ptit">常规数据在线整理</div>
+        <div class="ptit">共享数据在线整理</div>
         <div class="base-info">
 		<div class="shop-right">
 		

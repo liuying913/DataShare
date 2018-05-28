@@ -99,9 +99,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	                            <th scope="col" style="white-space: nowrap;"><i></i>台站名称</th>
 	                            <th scope="col" style="white-space: nowrap;"><i></i>文件名称</th>
 	                            <th scope="col" style="white-space: nowrap;"><i></i>文件大小(KB)</th>
-	                            <th scope="col" style="white-space: nowrap;"><i></i>历元数</th>
+	                            <!--<th scope="col" style="white-space: nowrap;"><i></i>历元数</th>
 	                            <th scope="col" style="white-space: nowrap;"><i></i>MP1</th>
-	                            <th scope="col" style="white-space: nowrap;"><i></i>MP2</th>
+	                            <th scope="col" style="white-space: nowrap;"><i></i>MP2</th>-->
 	                            <th scope="col" style="white-space: nowrap;"><i></i>是否完整</th>
 	                        </tr>
                         </table>

@@ -36,6 +36,7 @@ import com.highfd.service.DownHistoryService;
 import com.highfd.service.ManagerService;
 import com.highfd.service.SiteStationService;
 import com.highfd.service.UserService;
+
 /**
  * 基于注解的定时器
  */
@@ -58,6 +59,7 @@ public class FTPController2 {
 	@Scheduled(fixedRate = 1000*20) 
 	//@RequestMapping("/downChangeFile")
 	public void downChangeFile() throws Exception {
+		
 		/**
 		 * 下载的数据，修改fileId
 		 */

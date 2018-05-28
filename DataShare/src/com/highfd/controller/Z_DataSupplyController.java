@@ -20,6 +20,7 @@ import com.highfd.common.file.CopyFileUtil;
 import com.highfd.common.file.FileTool;
 import com.highfd.common.linux.FileTypeTransform;
 import com.highfd.common.map.MapAll;
+import com.highfd.controller.Data.share.service.ShareDataReductionService;
 /**
  * 基于注解的定时器
  */
@@ -36,7 +37,9 @@ public class Z_DataSupplyController {
 	HighFDService highFDService;
 	@Autowired
 	Z_DataReductionService z_DataReductionService;
-
+	@Autowired
+	ShareDataReductionService shareDataReductionService;
+	
 	public static String S30SBasePath = "/root/tmp_nas/gnssdata/CMONOC-GNSS";//30S 临时nas盘 o文件（人家的接收机存储文件）
 	public static String S30SWorkPath = "/home/liuying/To2Work01";
 	public static String S30S_ZipPath = "/root/nfs/Gnssdata/30sdz";//最终位置  30秒 Zip文件位置
@@ -63,6 +66,12 @@ public class Z_DataSupplyController {
 		
 		//查询所有的o文件，并进行压缩 转换 入库
 		FileTypeTransform.analysisAll_o(new File(MapAll.gnss_o),applyFileService);
+		
+		//整理共享的o文件
+		shareDataReductionService.analysisAll_o(new File(MapAll.Share_o),applyFileService);
+		
+		//整理共享的d.Z文件
+		System.out.println("开始整理O文件数据"+MapAll.Share_o);
 		
 		return null;
 	}
