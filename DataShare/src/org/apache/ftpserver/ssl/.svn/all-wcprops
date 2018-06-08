@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ssl
+END
+ClientAuth.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ssl/ClientAuth.java
+END
+SslConfigurationFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ssl/SslConfigurationFactory.java
+END
+SslConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ssl/SslConfiguration.java
+END

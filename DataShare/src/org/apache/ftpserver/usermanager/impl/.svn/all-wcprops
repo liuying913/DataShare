@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/usermanager/impl
+END
+DbUserManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/usermanager/impl/DbUserManager.java
+END
+UserMetadata.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/usermanager/impl/UserMetadata.java
+END
+WritePermission.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/usermanager/impl/WritePermission.java
+END
+WriteRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/usermanager/impl/WriteRequest.java
+END
+ConcurrentLoginPermission.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/usermanager/impl/ConcurrentLoginPermission.java
+END
+ConcurrentLoginRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/usermanager/impl/ConcurrentLoginRequest.java
+END
+PropertiesUserManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/usermanager/impl/PropertiesUserManager.java
+END
+BaseUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/usermanager/impl/BaseUser.java
+END
+TransferRatePermission.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/usermanager/impl/TransferRatePermission.java
+END
+TransferRateRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/usermanager/impl/TransferRateRequest.java
+END
+AbstractUserManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/usermanager/impl/AbstractUserManager.java
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver
+END
+FtpServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/FtpServer.java
+END
+DataConnectionConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/DataConnectionConfiguration.java
+END
+ConnectionConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ConnectionConfig.java
+END
+FtpServerConfigurationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/FtpServerConfigurationException.java
+END
+DataConnectionException.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/DataConnectionException.java
+END
+FtpServerFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/FtpServerFactory.java
+END
+DataConnectionConfigurationFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/DataConnectionConfigurationFactory.java
+END
+ConnectionConfigFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ConnectionConfigFactory.java
+END

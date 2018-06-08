@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ipfilter
+END
+IpFilterType.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ipfilter/IpFilterType.java
+END
+DefaultIpFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ipfilter/DefaultIpFilter.java
+END
+MinaIpFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ipfilter/MinaIpFilter.java
+END
+IpFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ipfilter/IpFilter.java
+END

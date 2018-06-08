@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/command
+END
+AbstractCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/command/AbstractCommand.java
+END
+NotSupportedCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/command/NotSupportedCommand.java
+END
+CommandFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/command/CommandFactory.java
+END
+Command.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/command/Command.java
+END
+CommandFactoryFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/command/CommandFactoryFactory.java
+END

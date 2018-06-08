@@ -1,0 +1,126 @@
+
+.select-container{
+	position: relative;
+	float: left;
+    margin-left: 50px;
+}
+
+div.select-main {
+	background-color: #FFFFFF;
+     border: 1px solid #ddd;
+	font-size: 1.2em;
+	height: 32px;
+	position: relative;
+	width: 125px;
+	
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+
+div.select-main.z-index {
+	z-index: 10;
+}
+
+div.select-main.disabled {
+	cursor: default;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	zoom: 1;
+}
+
+div.select-main.disabled div.select-set {
+	cursor: default;
+}
+
+div.select-main.disabled div.select-arrow {
+	cursor: default;
+}
+
+div.select-set {
+	background-color: #FFFFFF;
+	color: #333333;
+	cursor: pointer;
+	height: 32px;
+	line-height: 32px;
+	overflow: hidden;
+	position: relative;
+	padding: 0 35px 0 15px;
+	width: 75px;
+	z-index: 5;
+}
+
+div.select-arrow {
+	border-top: 7px solid #478de2;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	cursor: pointer;
+	height: 0px;
+	position: absolute;
+	top: 13px;
+	right: 10px;
+	width: 0px;
+	z-index: 7;
+}
+
+div.select-arrow.reverse {
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid #478de2;
+	top: 5px;
+}
+
+div.select-block {
+	background-color: #FFFFFF;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    left: -1px;
+    line-height: 20px;
+    position: absolute;
+    top: 32px;
+    width: 125px;
+    height: 135px;
+    overflow-y: auto;
+}
+
+ul.select-list {
+	cursor: pointer;
+	margin: 15px 0 7px;
+}
+
+/* Scroll view */
+
+ul.select-list::-webkit-scrollbar {
+    width: 12px;
+}
+
+ul.select-list::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+
+ul.select-list::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.5);
+}
+
+ul.select-list {
+	scrollbar-face-color: #AEB1B1;
+    scrollbar-shadow-color: #C7CACA;
+    scrollbar-highlight-color: #CED1D1;
+    scrollbar-3dlight-color: #CED1D1;
+    scrollbar-darkshadow-color: #C7CACA;
+    scrollbar-track-color: #CED1D1;
+    scrollbar-arrow-color: #333;
+}
+
+
+li.select-items {
+	color: #333333;
+	padding: 7px;
+}
+
+li.select-items:hover,
+li.select-items.active {
+	background-color: #478de2;
+	color: #FFFFFF;
+}

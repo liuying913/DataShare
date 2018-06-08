@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl
+END
+FtpDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl/FtpDaoImpl.java
+END
+HighFDDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl/HighFDDaoImpl.java
+END
+ManagerDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl/ManagerDAOImpl.java
+END
+DownHistoDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl/DownHistoDaoImpl.java
+END
+UserDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl/UserDAOImpl.java
+END
+DicDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl/DicDaoImpl.java
+END
+NoteInfoDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl/NoteInfoDaoImpl.java
+END
+AnalysisUserDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl/AnalysisUserDAOImpl.java
+END
+GreatEventUserDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl/GreatEventUserDAOImpl.java
+END
+MessageDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl/MessageDAOImpl.java
+END
+ApplyFileDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl/ApplyFileDAOImpl.java
+END
+DocDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl/DocDAOImpl.java
+END
+SiteStationDAOImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/dao/impl/SiteStationDAOImpl.java
+END

@@ -1,0 +1,24 @@
+body .main{ background:none;}
+body .toper{border:none;height:34px; line-height:34px;}
+body .toper .twel{color:#2d2d2d;font-size:12px;}
+body .toper .tfun .tico_layout{background:url(/DataShare/img/pcgzs/thead03.png) left center no-repeat;width:16px;height:16px;float:left;margin:5px 3px 0 0;}
+body .toper .tfun a{ background:none;width:45px; line-height:25px;margin-right:10px;}
+body .toper .tfun a:hover{background:none;}
+body .toper .tfun a,body .toper .tfun a:visited{color:#2f67bf;}
+body .logo{margin-left:75px;}
+.twel .tico_home{background:url(/DataShare/img/pcgzs/thead02.png) left center no-repeat;width:16px;height:16px;float:left;margin:9px 0 0 20px;}
+.ttb a{float:left;position: relative; }
+.twel .tico_news{background:url(/DataShare/img/pcgzs/thead01.png) left center no-repeat;width:16px;height:16px;float:left;margin:9px 0 0 25px;}
+.toper .twel .tnews{display:none;position: absolute; top: 2px; right: -8px; line-height: 12px; background-color: #ff665c; color:#fff; height: 12px; font-size: 12px; padding:0 4px; text-align:center; border-radius:6px;color:#fff;}
+.toper .twel .nownews:hover .tnews-list{display: block;}
+.toper .twel .tnews-list{left:-80px;}
+body #nav-ul li a{padding:0;width:88px;height:40px; line-height:38px;font-size:15px; text-align:center;color:#2a2a2a;}
+body .nav li{height:34px;line-height:34px;margin-left:20px;}
+body .nav{margin-right:125px;}
+body #nav-ul li.active a,body #nav-ul li.active a:visited{color:#fff;}
+body .shop .shop-left .usercenter .add{background:none;background-color:#306bb5;}
+body .shop .shop-left .usercenter li a{background:url(/DataShare/img/pcgzs/u01.png) 15px center no-repeat;}
+body .shop .shop-left .usercenter li.u02 a{background:url(/DataShare/img/pcgzs/u02.png) 11px center no-repeat;}
+body .shop .shop-left .usercenter li.u03 a{background:url(/DataShare/img/pcgzs/u03.png) 11px center no-repeat;}
+body .shop .shop-left .usercenter li.u04 a{background:url(/DataShare/img/pcgzs/u04.png) 11px center no-repeat;}
+

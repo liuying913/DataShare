@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet
+END
+Structure.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/Structure.java
+END
+FtpRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/FtpRequest.java
+END
+DefaultFtplet.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/DefaultFtplet.java
+END
+AuthenticationFailedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/AuthenticationFailedException.java
+END
+FtpletContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/FtpletContext.java
+END
+FtpStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/FtpStatistics.java
+END
+FtpReply.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/FtpReply.java
+END
+FtpException.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/FtpException.java
+END
+AuthorizationRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/AuthorizationRequest.java
+END
+UserManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/UserManager.java
+END
+DefaultFtpReply.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/DefaultFtpReply.java
+END
+DataType.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/DataType.java
+END
+FileSystemFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/FileSystemFactory.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/User.java
+END
+FileSystemView.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/FileSystemView.java
+END
+Authentication.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/Authentication.java
+END
+DataConnectionFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/DataConnectionFactory.java
+END
+Authority.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/Authority.java
+END
+FtpFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/FtpFile.java
+END
+DataConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/DataConnection.java
+END
+FtpSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/FtpSession.java
+END
+FtpletResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/FtpletResult.java
+END
+Ftplet.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ftplet/Ftplet.java
+END

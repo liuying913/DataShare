@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/config/spring
+END
+FileSystemBeanDefinitionParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/config/spring/FileSystemBeanDefinitionParser.java
+END
+SpringUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/config/spring/SpringUtil.java
+END
+ListenerBeanDefinitionParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/config/spring/ListenerBeanDefinitionParser.java
+END
+CommandFactoryBeanDefinitionParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/config/spring/CommandFactoryBeanDefinitionParser.java
+END
+ServerBeanDefinitionParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/config/spring/ServerBeanDefinitionParser.java
+END
+UserManagerBeanDefinitionParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/config/spring/UserManagerBeanDefinitionParser.java
+END
+FtpServerNamespaceHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/config/spring/FtpServerNamespaceHandler.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/config/spring/package.html
+END

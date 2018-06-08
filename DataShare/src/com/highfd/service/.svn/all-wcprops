@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service
+END
+UserService.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/UserService.java
+END
+DicService.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/DicService.java
+END
+Z_DataReductionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/Z_DataReductionService.java
+END
+NoteInfoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/NoteInfoService.java
+END
+AnalysisUserService.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/AnalysisUserService.java
+END
+GreatEventService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/GreatEventService.java
+END
+MessageService.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/MessageService.java
+END
+ApplyFileService.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/ApplyFileService.java
+END
+DocService.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/DocService.java
+END
+SiteStationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/SiteStationService.java
+END
+Z_EarthDataService.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/Z_EarthDataService.java
+END
+DownHistoryService.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/DownHistoryService.java
+END
+HighFDService.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/HighFDService.java
+END
+ManagerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/highfd/service/ManagerService.java
+END

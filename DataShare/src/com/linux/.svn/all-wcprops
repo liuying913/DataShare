@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux
+END
+ConnectionSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux/ConnectionSource.java
+END
+StaticConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux/StaticConstant.java
+END
+PropertyHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux/PropertyHelper.java
+END
+Z_TEQC_LINUX.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux/Z_TEQC_LINUX.java
+END
+GpsWeek.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux/GpsWeek.java
+END
+StaticUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux/StaticUtil.java
+END
+Tr.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux/Tr.java
+END
+DataStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux/DataStore.java
+END
+To2ToTgd.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux/To2ToTgd.java
+END
+DataServiceSQLException.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux/DataServiceSQLException.java
+END
+To2Bean.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux/To2Bean.java
+END
+TEQC_LINUX.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux/TEQC_LINUX.java
+END
+DataServiceRuntimeException.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/com/linux/DataServiceRuntimeException.java
+END

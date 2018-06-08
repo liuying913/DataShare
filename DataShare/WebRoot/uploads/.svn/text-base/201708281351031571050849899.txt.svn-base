@@ -1,0 +1,9 @@
+服务端
+redis  redis-server.exe redis.windows.conf
+
+客户端
+redis  redis-cli.exe -h 127.0.0.1 -p 6379
+set myKey abc
+get myKey
+
+Redis支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及zset(sorted set：有序集合)

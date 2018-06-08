@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/filesystem/nativefs/impl
+END
+NativeFtpFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/LiuYing/!svn/ver/25/DataShare/DataShare/src/org/apache/ftpserver/filesystem/nativefs/impl/NativeFtpFile.java
+END
+NameEqualsFileFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/filesystem/nativefs/impl/NameEqualsFileFilter.java
+END
+根据ftp账号进行数据权限查询NativeFtpFile.javaBack
+K 25
+svn:wc:ra_dav:version-url
+V 227
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/filesystem/nativefs/impl/%E6%A0%B9%E6%8D%AEftp%E8%B4%A6%E5%8F%B7%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90%E6%9F%A5%E8%AF%A2NativeFtpFile.javaBack
+END
+NativeFileSystemView.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/filesystem/nativefs/impl/NativeFileSystemView.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/filesystem/nativefs/impl/package.html
+END

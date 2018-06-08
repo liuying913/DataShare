@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ssl/impl
+END
+AliasKeyManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ssl/impl/AliasKeyManager.java
+END
+DefaultSslConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ssl/impl/DefaultSslConfiguration.java
+END
+ExtendedAliasKeyManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ssl/impl/ExtendedAliasKeyManager.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/LiuYing/!svn/ver/2/DataShare/DataShare/src/org/apache/ftpserver/ssl/impl/package.html
+END
